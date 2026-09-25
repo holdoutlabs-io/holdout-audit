@@ -1,0 +1,180 @@
+{
+  "seal": {
+    "prereg_sha256": "aafe3c37f5bbf83bc6e4b9a986ef1c936c3b74a927c253b833a5a7626482de40",
+    "seal_sha256": "f8d7d587466a4bb61b5c179aba44bb766825a6a495cc3ecb68d16e39c1810275",
+    "signed_utc": [
+      [
+        "digicert",
+        "2026-09-25T18:22:38Z"
+      ],
+      [
+        "freetsa",
+        "2026-09-25T18:22:38Z"
+      ]
+    ],
+    "headers": {
+      "source": "Bitcoin P2P network (getheaders from DNS-seed peers); every header prev-hash-linked and PoW-checked",
+      "fetch_started_utc": "2026-09-25T18:23:09Z",
+      "rows": 968471,
+      "max_height": 968470,
+      "cutoff": "timestamp < 2026-09-25T00:00:00Z",
+      "sha256": "a69bc2d867edf4e5c46ea5b87aeb0e1fbc24ff795d7776b72407abe4f9025b15",
+      "tip_height_seen": 968572
+    }
+  },
+  "rows": [
+    {
+      "id": "A1",
+      "indicator": "Pi Cycle Top",
+      "published": "Philip Swift, Apr 2019",
+      "rule": "111-day SMA crosses above 2 x 350-day SMA",
+      "kind": "top",
+      "zone": "crossing day",
+      "oos": "2019-05-01 to 2026-09-24",
+      "episodes": 1,
+      "zone_days": 1,
+      "episode_starts": [
+        "2021-04-12"
+      ],
+      "fwd365_zone": -0.3301077777306147,
+      "fwd365_all": 0.4156173126575149,
+      "p": null,
+      "p_holm": null,
+      "status": "NOT TESTABLE (descriptive only)",
+      "grade": null,
+      "strategy_excess_return": null,
+      "strategy_excess_sr": null,
+      "report": null
+    },
+    {
+      "id": "A2",
+      "indicator": "200-week MA heatmap (bottom claim)",
+      "published": "PlanB concept, Jan 2019",
+      "rule": "close within 10% above the 200-week MA, or below it",
+      "kind": "bottom",
+      "zone": "close <= 1.10 x 200WMA",
+      "oos": "2019-05-19 to 2026-09-24",
+      "episodes": 3,
+      "zone_days": 443,
+      "episode_starts": [
+        "2020-03-12",
+        "2022-06-13",
+        "2023-07-24"
+      ],
+      "fwd365_zone": 1.0173129169741428,
+      "fwd365_all": 0.4156641285454765,
+      "p": null,
+      "p_holm": null,
+      "status": "NOT TESTABLE (descriptive only)",
+      "grade": null,
+      "strategy_excess_return": null,
+      "strategy_excess_sr": null,
+      "report": null
+    },
+    {
+      "id": "A3",
+      "indicator": "Mayer Multiple",
+      "published": "Trace Mayer, 2017",
+      "rule": "close / 200-day SMA > 2.4",
+      "kind": "top",
+      "zone": "MM > 2.4",
+      "oos": "2018-01-01 to 2026-09-24",
+      "episodes": 3,
+      "zone_days": 28,
+      "episode_starts": [
+        "2018-01-05",
+        "2019-06-26",
+        "2021-01-03"
+      ],
+      "fwd365_zone": -0.21442908888804135,
+      "fwd365_all": 0.36371342651975747,
+      "p": null,
+      "p_holm": null,
+      "status": "NOT TESTABLE (descriptive only)",
+      "grade": "F",
+      "strategy_excess_return": 0.0313,
+      "strategy_excess_sr": 0.319,
+      "report": "reports/a3-mayer-multiple.html"
+    },
+    {
+      "id": "A4",
+      "indicator": "2-Year MA Multiplier",
+      "published": "Philip Swift, Jul 2017",
+      "rule": "close below the 730-day SMA",
+      "kind": "bottom",
+      "zone": "close < 2yMA",
+      "oos": "2017-08-01 to 2026-09-24",
+      "episodes": 4,
+      "zone_days": 793,
+      "episode_starts": [
+        "2018-11-16",
+        "2019-10-23",
+        "2020-03-12",
+        "2022-05-08"
+      ],
+      "fwd365_zone": 1.0778223643928655,
+      "fwd365_all": 0.3339563435630051,
+      "p": null,
+      "p_holm": null,
+      "status": "NOT TESTABLE (descriptive only)",
+      "grade": "F",
+      "strategy_excess_return": -0.1275,
+      "strategy_excess_sr": -0.38,
+      "report": "reports/a4-2-year-ma-multiplier.html"
+    },
+    {
+      "id": "A5",
+      "indicator": "Puell Multiple",
+      "published": "David Puell, Mar 2019",
+      "rule": "issuance value / its 365-day mean < 0.5",
+      "kind": "bottom",
+      "zone": "Puell < 0.5",
+      "oos": "2019-04-01 to 2026-09-24",
+      "episodes": 4,
+      "zone_days": 99,
+      "episode_starts": [
+        "2020-03-16",
+        "2020-05-12",
+        "2021-06-27",
+        "2022-06-13"
+      ],
+      "fwd365_zone": 1.046584674820377,
+      "fwd365_all": 0.41526521043955333,
+      "p": null,
+      "p_holm": null,
+      "status": "NOT TESTABLE (descriptive only)",
+      "grade": "F",
+      "strategy_excess_return": 0.0,
+      "strategy_excess_sr": 0.0,
+      "report": "reports/a5-puell-multiple.html"
+    },
+    {
+      "id": "A6",
+      "indicator": "Stock-to-flow (PlanB 2019)",
+      "published": "22 Mar 2019",
+      "rule": "close below PlanB's model price exp(14.6) SF^3.3 / supply",
+      "kind": "bottom",
+      "zone": "close < S2F model",
+      "oos": "2019-03-23 to 2026-09-24",
+      "episodes": 6,
+      "zone_days": 1798,
+      "episode_starts": [
+        "2019-03-23",
+        "2020-03-12",
+        "2020-07-20",
+        "2020-08-27",
+        "2021-01-27",
+        "2021-04-18"
+      ],
+      "fwd365_zone": 0.2578558327813698,
+      "fwd365_all": 0.4158854850088407,
+      "p": 0.9375312343828086,
+      "p_holm": 1.0,
+      "status": "NOT SUPPORTED",
+      "grade": "F",
+      "strategy_excess_return": -0.192,
+      "strategy_excess_sr": -0.526,
+      "report": "reports/a6-stock-to-flow.html"
+    }
+  ]
+}

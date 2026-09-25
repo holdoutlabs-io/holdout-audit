@@ -1,0 +1,468 @@
+{
+  "objective": "beat_benchmark",
+  "max_return_shortfall_annual": null,
+  "benchmark": "buy-and-hold of the same asset (total return); for multi-asset rules see each audit",
+  "declared_at_utc": "2026-09-25T20:11:24Z",
+  "declared_by": "holdout-labs-batch-2",
+  "title": "Holdout Labs Indicator Audit, Batch 2: Classic market rules (traditional markets only), 14 audits",
+  "written_at_utc": "2026-09-25T20:11:24Z",
+  "scope_policy": "Celestial ledger DEV-031: equity indices, equity ETFs (broad, sector, international), individual equities, bond ETFs, FX and BTC are permitted; commodities, metals, commodity ETFs and astronomical features are forbidden. This batch uses no crypto. The VIX index level is used only as a signal (vix_stretch).",
+  "rubric": "Holdout Labs Fragility Rubric v1.1 (docs/RUBRIC-v1.1.md, SHA-256 2311b126336bab9f426a84f9c9cd9cb937e346b403a62f60e3c96ed8b5868e46), objective (a) beat the benchmark, for every audit.",
+  "rules": [
+    {
+      "key": "faber",
+      "name": "Faber 10-month SMA timing",
+      "source": "Faber, M. T. (2007). A Quantitative Approach to Tactical Asset Allocation. Journal of Wealth Management 9(4), 69-79 (SSRN 962461).",
+      "rule": "At each month end, long the asset if its monthly close is above its 10-month simple moving average of month-end closes; otherwise cash.",
+      "published_default": "10 months",
+      "markets_used_by_source": "US equities (S&P 500), foreign equities (MSCI EAFE), US 10-year Treasuries (plus REITs and commodities, which are outside our scope or not in this batch)",
+      "audited_variant": "months=10",
+      "variant_grid": {
+        "months": [
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "n_variants": 4,
+      "implementation": "samples/batch2_rules.py (faber)"
+    },
+    {
+      "key": "sma_filter",
+      "name": "200-day moving-average filter",
+      "source": "Siegel, J. J. (2002). Stocks for the Long Run, 3rd ed., McGraw-Hill, ch. 17 (the 200-day moving average with a 1% band on the Dow and S&P 500).",
+      "rule": "Buy at the close when the index closes at least 1% above its 200-day SMA; sell to cash when it closes at least 1% below; otherwise keep the position.",
+      "published_default": "200 days, 1% band",
+      "markets_used_by_source": "US large-cap equities (DJIA; S&P 500)",
+      "audited_variant": "n=200|band=0.01",
+      "variant_grid": {
+        "n": [
+          100,
+          150,
+          200,
+          250
+        ],
+        "band": [
+          0.0,
+          0.01
+        ]
+      },
+      "n_variants": 8,
+      "implementation": "samples/batch2_rules.py (sma_filter)"
+    },
+    {
+      "key": "halloween",
+      "name": "Halloween indicator / Sell in May",
+      "source": "Bouman, S. & Jacobsen, B. (2002). The Halloween Indicator, 'Sell in May and Go Away': Another Puzzle. American Economic Review 92(5), 1618-1635.",
+      "rule": "Invested from the start of November through the end of April; cash from May through October.",
+      "published_default": "November-April",
+      "markets_used_by_source": "37 national stock markets including the US and the major developed markets",
+      "audited_variant": "entry=Nov|exit=Apr",
+      "variant_grid": {
+        "entry": [
+          "Oct",
+          "Nov"
+        ],
+        "exit": [
+          "Mar",
+          "Apr",
+          "May"
+        ]
+      },
+      "n_variants": 6,
+      "implementation": "samples/batch2_rules.py (halloween)"
+    },
+    {
+      "key": "turn_of_month",
+      "name": "Turn-of-the-month effect",
+      "source": "Lakonishok, J. & Smidt, S. (1988). Are Seasonal Anomalies Real? Review of Financial Studies 1(4), 403-425; McConnell, J. J. & Xu, W. (2008). Equity Returns at the Turn of the Month. Financial Analysts Journal 64(2), 49-64.",
+      "rule": "Invested over the last trading day of each month and the first three trading days of the next; cash otherwise.",
+      "published_default": "last 1 + first 3 trading days",
+      "markets_used_by_source": "US equities (DJIA / CRSP; McConnell & Xu also 35 other countries)",
+      "audited_variant": "last=1|first=3",
+      "variant_grid": {
+        "last": [
+          1,
+          2
+        ],
+        "first": [
+          2,
+          3,
+          4
+        ]
+      },
+      "n_variants": 6,
+      "implementation": "samples/batch2_rules.py (turn_of_month)"
+    },
+    {
+      "key": "dual_momentum",
+      "name": "Antonacci dual momentum (Global Equities Momentum)",
+      "source": "Antonacci, G. (2014). Dual Momentum Investing. McGraw-Hill; Antonacci, G. (2012). Risk Premia Harvesting Through Dual Momentum (SSRN 2042750).",
+      "rule": "At each month end: if US equities' 12-month total return beats the absolute-momentum hurdle, hold whichever of US (SPY) and non-US (EFA) equities had the higher 12-month return; otherwise hold aggregate bonds (AGG).",
+      "published_default": "12-month lookback; aggregate bonds as the safe asset",
+      "markets_used_by_source": "S&P 500, MSCI ACWI ex-US, Barclays US Aggregate Bond; T-bills for the absolute-momentum hurdle",
+      "audited_variant": "lookback=12|safe=AGG",
+      "variant_grid": {
+        "lookback": [
+          6,
+          9,
+          12
+        ],
+        "safe": [
+          "AGG",
+          "IEF"
+        ]
+      },
+      "n_variants": 6,
+      "implementation": "samples/batch2_rules.py (dual_momentum)"
+    },
+    {
+      "key": "sector_momentum",
+      "name": "Sector momentum rotation (12-1 month)",
+      "source": "Moskowitz, T. J. & Grinblatt, M. (1999). Do Industries Explain Momentum? Journal of Finance 54(4), 1249-1290; Faber, M. T. (2010). Relative Strength Strategies for Investing (SSRN 1585517).",
+      "rule": "At each month end rank the nine original sector SPDRs by total return from 12 months ago to 1 month ago, and hold the top three equally weighted until the next month end.",
+      "published_default": "12-month lookback skipping the latest month; top 3",
+      "markets_used_by_source": "US industries/sectors",
+      "audited_variant": "lookback=12|skip=1|top=3",
+      "variant_grid": {
+        "lookback": [
+          6,
+          9,
+          12
+        ],
+        "skip": [
+          0,
+          1
+        ],
+        "top": [
+          1,
+          3
+        ]
+      },
+      "n_variants": 12,
+      "implementation": "samples/batch2_rules.py (sector_momentum)"
+    },
+    {
+      "key": "vix_stretch",
+      "name": "VIX stretches (Connors & Alvarez)",
+      "source": "Connors, L. & Alvarez, C. (2009). Short Term Trading Strategies That Work. TradingMarkets, chapter 'VIX Stretches'.",
+      "rule": "Buy SPY at the close when SPY is above its 200-day SMA and the VIX has closed at least 5% above its 10-day SMA for three or more consecutive days; exit at the close when SPY's RSI(2) exceeds 65. The VIX index level is used only as a signal and never traded.",
+      "published_default": "5% stretch, 3 days, exit RSI(2) > 65",
+      "markets_used_by_source": "S&P 500 (SPY), with the VIX as the signal",
+      "audited_variant": "stretch=0.05|days=3|exit=65",
+      "variant_grid": {
+        "stretch": [
+          0.03,
+          0.05,
+          0.1
+        ],
+        "days": [
+          2,
+          3,
+          4
+        ],
+        "exit": [
+          65,
+          75
+        ]
+      },
+      "n_variants": 18,
+      "implementation": "samples/batch2_rules.py (vix_stretch)"
+    },
+    {
+      "key": "golden_cross",
+      "name": "Golden cross (50/200-day)",
+      "source": "Traditional trend-following rule; see, e.g., Brock, W., Lakonishok, J. & LeBaron, B. (1992). Simple Technical Trading Rules and the Stochastic Properties of Stock Returns. Journal of Finance 47(5), 1731-1764 (moving-average rules including 50 and 200 days).",
+      "rule": "Long while the 50-day SMA is above the 200-day SMA; cash otherwise.",
+      "published_default": "50/200 days",
+      "markets_used_by_source": "US equity indices (DJIA in Brock et al.); this audit applies it to the Nasdaq-100 (QQQ)",
+      "audited_variant": "fast=50|slow=200",
+      "variant_grid": {
+        "fast": [
+          20,
+          30,
+          50,
+          70,
+          100
+        ],
+        "slow": [
+          100,
+          150,
+          200,
+          250,
+          300
+        ]
+      },
+      "n_variants": 24,
+      "implementation": "samples/batch2_rules.py (golden_cross)"
+    },
+    {
+      "key": "sixty_forty",
+      "name": "60/40 rebalancing bands",
+      "source": "Jaconetti, C. M., Kinniry, F. M. & Zilbering, Y. (2010). Best Practices for Portfolio Rebalancing. Vanguard Research.",
+      "rule": "Hold 60% US equities (SPY) / 40% Treasuries (IEF), let the weights drift, and rebalance to 60/40 on a month end whenever the equity weight is more than 5 percentage points away from 60%.",
+      "published_default": "5 percentage-point band, checked monthly",
+      "markets_used_by_source": "US stocks and US bonds",
+      "audited_variant": "band=0.05|check=monthly",
+      "variant_grid": {
+        "band": [
+          0.01,
+          0.03,
+          0.05,
+          0.1,
+          0.2
+        ],
+        "check": [
+          "daily",
+          "monthly"
+        ]
+      },
+      "n_variants": 10,
+      "implementation": "samples/batch2_rules.py (sixty_forty)"
+    },
+    {
+      "key": "rsi2",
+      "name": "Connors RSI(2) with exit variants",
+      "source": "Connors, L. & Alvarez, C. (2009). Short Term Trading Strategies That Work. TradingMarkets, chapter 'The 2-period RSI'.",
+      "rule": "Buy at the close when the close is above its 200-day SMA and RSI(2) is below 5; exit at the close when the close is above its 5-day SMA. Exit variants: 10-day SMA, RSI(2) > 70, first up close.",
+      "published_default": "entry RSI(2) < 5, exit close > 5-day SMA",
+      "markets_used_by_source": "US equity index ETFs (SPY, QQQ and others)",
+      "audited_variant": "entry=5|exit=sma5",
+      "variant_grid": {
+        "entry": [
+          2,
+          5,
+          10
+        ],
+        "exit": [
+          "sma5",
+          "sma10",
+          "rsi70",
+          "upclose"
+        ]
+      },
+      "n_variants": 12,
+      "implementation": "samples/batch2_rules.py (rsi2)"
+    }
+  ],
+  "audits": [
+    {
+      "id": "faber-spy",
+      "rule": "faber",
+      "market": "SPY",
+      "data_symbols": [
+        "SPY"
+      ],
+      "benchmark": "buy-and-hold SPY",
+      "audit_period": "1994-01-03 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 4
+    },
+    {
+      "id": "faber-efa",
+      "rule": "faber",
+      "market": "EFA",
+      "data_symbols": [
+        "EFA"
+      ],
+      "benchmark": "buy-and-hold EFA",
+      "audit_period": "2002-09-03 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 5.0,
+      "n_variants": 4
+    },
+    {
+      "id": "faber-ief",
+      "rule": "faber",
+      "market": "IEF",
+      "data_symbols": [
+        "IEF"
+      ],
+      "benchmark": "buy-and-hold IEF",
+      "audit_period": "2003-08-01 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 4
+    },
+    {
+      "id": "sma200-spy",
+      "rule": "sma_filter",
+      "market": "SPY",
+      "data_symbols": [
+        "SPY"
+      ],
+      "benchmark": "buy-and-hold SPY",
+      "audit_period": "1994-02-01 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 8
+    },
+    {
+      "id": "halloween-spy",
+      "rule": "halloween",
+      "market": "SPY",
+      "data_symbols": [
+        "SPY"
+      ],
+      "benchmark": "buy-and-hold SPY",
+      "audit_period": "1994-01-03 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 6
+    },
+    {
+      "id": "halloween-efa",
+      "rule": "halloween",
+      "market": "EFA",
+      "data_symbols": [
+        "EFA"
+      ],
+      "benchmark": "buy-and-hold EFA",
+      "audit_period": "2001-09-04 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 5.0,
+      "n_variants": 6
+    },
+    {
+      "id": "tom-spy",
+      "rule": "turn_of_month",
+      "market": "SPY",
+      "data_symbols": [
+        "SPY"
+      ],
+      "benchmark": "buy-and-hold SPY",
+      "audit_period": "1994-01-03 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 6
+    },
+    {
+      "id": "dualmom-spy-efa-agg",
+      "rule": "dual_momentum",
+      "market": "SPY/EFA/AGG",
+      "data_symbols": [
+        "SPY",
+        "EFA",
+        "AGG",
+        "IEF"
+      ],
+      "benchmark": "buy-and-hold SPY",
+      "audit_period": "2004-10-01 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 6
+    },
+    {
+      "id": "sectors-12-1",
+      "rule": "sector_momentum",
+      "market": "9 sector SPDRs",
+      "data_symbols": [
+        "XLB",
+        "XLE",
+        "XLF",
+        "XLI",
+        "XLK",
+        "XLP",
+        "XLU",
+        "XLV",
+        "XLY",
+        "SPY"
+      ],
+      "benchmark": "buy-and-hold SPY",
+      "audit_period": "2000-02-01 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 5.0,
+      "n_variants": 12
+    },
+    {
+      "id": "vix-stretch-spy",
+      "rule": "vix_stretch",
+      "market": "SPY (VIX signal)",
+      "data_symbols": [
+        "SPY",
+        "^VIX"
+      ],
+      "benchmark": "buy-and-hold SPY",
+      "audit_period": "1994-01-03 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 18
+    },
+    {
+      "id": "golden-cross-qqq",
+      "rule": "golden_cross",
+      "market": "QQQ",
+      "data_symbols": [
+        "QQQ"
+      ],
+      "benchmark": "buy-and-hold QQQ",
+      "audit_period": "2000-06-01 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 24
+    },
+    {
+      "id": "sixty-forty-bands",
+      "rule": "sixty_forty",
+      "market": "SPY/IEF 60/40",
+      "data_symbols": [
+        "SPY",
+        "IEF"
+      ],
+      "benchmark": "60/40 SPY/IEF bought at the start and never rebalanced",
+      "audit_period": "2002-08-01 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 10
+    },
+    {
+      "id": "rsi2-qqq",
+      "rule": "rsi2",
+      "market": "QQQ",
+      "data_symbols": [
+        "QQQ"
+      ],
+      "benchmark": "buy-and-hold QQQ",
+      "audit_period": "2000-01-03 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 2.0,
+      "n_variants": 12
+    },
+    {
+      "id": "rsi2-iwm",
+      "rule": "rsi2",
+      "market": "IWM",
+      "data_symbols": [
+        "IWM"
+      ],
+      "benchmark": "buy-and-hold IWM",
+      "audit_period": "2001-03-15 to 2026-09-24",
+      "holdout_split": "2018-01-02",
+      "cost_bps_per_unit_turnover": 5.0,
+      "n_variants": 12
+    }
+  ],
+  "data": {
+    "source": "Yahoo Finance public chart endpoint (daily), fetched by samples/data/fetch.py (fetch_batch2) into samples/data/raw/yahoo_*.csv AFTER this document is sealed; each file's SHA-256 is recorded in samples/data/MANIFEST.json and printed in the reports. Symbols: SPY, QQQ, IWM, EFA, IEF, AGG, ^VIX and the nine sector SPDRs (XLB, XLE, XLF, XLI, XLK, XLP, XLU, XLV, XLY).",
+    "fields": "Signals use Yahoo's split-adjusted close; total returns use Yahoo's split- and dividend-adjusted close (adjclose). For ^VIX (an index) the close is used.",
+    "terms_and_publication": "Yahoo Finance's terms cover personal use and grant no redistribution. Holdout Labs publishes derived statistics only, never raw prices, and does not redistribute the data (owner decision of 2026-09-25 making Yahoo the official source for published samples). The raw files are git-ignored; only fetch code and hashes are committed."
+  },
+  "execution_convention": "Signals at the daily close (monthly rules at the last trading day of each month), position held from that close to the next; out of the market the strategy holds cash earning 0% (no T-bill series is used, because a Treasury-bill rate index is not a DEV-031-permitted instrument). This biases the results against the timing rules by roughly the T-bill rate times the time spent in cash; it is stated in every report. Dual momentum's absolute-momentum hurdle is therefore 0% rather than the T-bill return. No leverage, no shorting.",
+  "settings": {
+    "bootstrap_draws": 1000,
+    "cscv_blocks": 16,
+    "seed": 20260925,
+    "periods_per_year": 252,
+    "declared_n_trials": "equal to n_variants of each rule"
+  },
+  "batch_level_inference": {
+    "primary_statistic": "each audit's Hansen SPA consistent p-value (best variant of the preregistered family against the audit's benchmark, stationary bootstrap).",
+    "multiplicity": "Holm step-down correction across all 14 audits at family-wise alpha 0.05.",
+    "survives": "An audit survives only if its Holm-adjusted SPA p <= 0.05. No rule will be described as beating its benchmark unless it survives. The rubric v1.1 grade is reported for every audit regardless."
+  },
+  "publication_commitment": "All 14 results are published in samples/batch2/ and on holdoutlabs.io/audits/batch-2/, pass or fail, with every report, the summary table and this preregistration. No audit will be dropped, re-run with different settings, or re-graded under another objective.",
+  "prior_exposure": "The auditors have already seen SPY and BTC results: sample audits 1-4 (SPY golden cross, SPY RSI(2), BTC), Indicator Audit Batch 1 (ten TradingView built-ins on SPY and BTC, none beat buy-and-hold) and the on-chain batch. We know that timing rules on SPY broadly failed to beat buy-and-hold in 1994-2026. None of the ten rules here has been run by us on QQQ, IWM, EFA, IEF, AGG, the sector SPDRs or the VIX; the SPY golden-cross and RSI(2) rules were run in samples 1 and 2 (the golden cross here is on QQQ and the RSI(2) on QQQ and IWM). The implementations were tested on synthetic data only.",
+  "deviations": "Any deviation from this document will be listed on the summary page and in the affected reports."
+}

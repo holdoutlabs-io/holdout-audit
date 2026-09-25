@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+# Raw vendor data is never committed: fetch scripts + hashes instead.
+samples/data/raw/
+samples/onchain1/raw/

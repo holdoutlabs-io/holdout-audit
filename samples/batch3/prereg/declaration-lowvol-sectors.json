@@ -1,0 +1,8 @@
+{
+  "objective": "improve_sharpe",
+  "max_return_shortfall_annual": null,
+  "benchmark": "buy-and-hold SPY",
+  "declared_at_utc": "2026-09-25T20:39:29Z",
+  "declared_by": "holdout-labs-batch-3/lowvol-sectors",
+  "source_claim": "Low-volatility portfolios earn market-like returns with lower risk: a higher Sharpe ratio than the market."
+}

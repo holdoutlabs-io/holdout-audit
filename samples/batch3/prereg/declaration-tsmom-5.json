@@ -1,0 +1,8 @@
+{
+  "objective": "improve_sharpe",
+  "max_return_shortfall_annual": null,
+  "benchmark": "equal-weight buy-and-hold of the same five ETFs, rebalanced monthly",
+  "declared_at_utc": "2026-09-25T20:39:29Z",
+  "declared_by": "holdout-labs-batch-3/tsmom-5",
+  "source_claim": "A diversified time-series momentum portfolio earns a high Sharpe ratio and performs well in extreme markets; here judged on Sharpe improvement over holding the same assets."
+}

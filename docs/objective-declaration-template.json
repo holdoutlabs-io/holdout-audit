@@ -1,0 +1,8 @@
+{
+  "objective": "reduce_drawdown",
+  "max_return_shortfall_annual": 0.02,
+  "benchmark": "buy-and-hold of the traded asset (total return)",
+  "declared_at_utc": "REPLACE: e.g. 2026-10-01T09:00:00Z (must be before you send the audit data)",
+  "declared_by": "REPLACE: an opaque client reference, not a name",
+  "notes": "objective is 'beat_benchmark' (default) or 'reduce_drawdown'. max_return_shortfall_annual is the most annual return, relative to the benchmark, you accept giving up (0.02 = 2% a year); required for reduce_drawdown. This file is hashed into the report; you may seal it first with `holdout-audit seal-doc`."
+}

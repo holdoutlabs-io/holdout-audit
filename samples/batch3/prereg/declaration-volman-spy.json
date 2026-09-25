@@ -1,0 +1,8 @@
+{
+  "objective": "improve_sharpe",
+  "max_return_shortfall_annual": null,
+  "benchmark": "buy-and-hold SPY",
+  "declared_at_utc": "2026-09-25T20:39:29Z",
+  "declared_by": "holdout-labs-batch-3/volman-spy",
+  "source_claim": "Scaling equity exposure by the inverse of last month's realised variance raises the Sharpe ratio (and produces alpha) relative to the unmanaged market."
+}

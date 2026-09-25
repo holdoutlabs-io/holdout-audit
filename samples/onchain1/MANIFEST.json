@@ -1,0 +1,11 @@
+{
+  "headers.csv": {
+    "source": "Bitcoin P2P network (getheaders from DNS-seed peers); every header prev-hash-linked and PoW-checked",
+    "fetch_started_utc": "2026-09-25T18:23:09Z",
+    "rows": 968471,
+    "max_height": 968470,
+    "cutoff": "timestamp < 2026-09-25T00:00:00Z",
+    "sha256": "a69bc2d867edf4e5c46ea5b87aeb0e1fbc24ff795d7776b72407abe4f9025b15",
+    "tip_height_seen": 968572
+  }
+}

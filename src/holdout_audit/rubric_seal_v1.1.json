@@ -1,0 +1,9 @@
+{
+  "seal_sha256": "ac882c422df5154ec7e6e928904c9099d6b286dc9e5369fece4b85df57044138",
+  "status": "verified",
+  "subject_sha256": "2311b126336bab9f426a84f9c9cd9cb937e346b403a62f60e3c96ed8b5868e46",
+  "tsa_times": {
+    "digicert": "2026-09-25T14:20:10Z",
+    "freetsa": "2026-09-25T14:20:11Z"
+  }
+}

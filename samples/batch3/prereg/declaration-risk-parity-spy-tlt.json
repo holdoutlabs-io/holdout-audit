@@ -1,0 +1,8 @@
+{
+  "objective": "improve_sharpe",
+  "max_return_shortfall_annual": null,
+  "benchmark": "60/40 SPY/TLT rebalanced monthly",
+  "declared_at_utc": "2026-09-25T20:39:29Z",
+  "declared_by": "holdout-labs-batch-3/risk-parity-spy-tlt",
+  "source_claim": "Weighting stocks and bonds by inverse volatility gives a higher Sharpe ratio than a 60/40 portfolio."
+}

@@ -1,0 +1,133 @@
+{
+  "title": "On-chain Indicator Audit, Batch 1: famous Bitcoin cycle indicators, each frozen as first published, tested only on data after its first publication",
+  "written_at_utc": "2026-09-25T18:23:00Z",
+  "study_id": "ONCHAIN-1",
+  "scope": "Statistical analysis only (docs/SCOPE-POLICY.md). No trading or investment advice. Every result is published, pass or fail.",
+  "licence_decision": "samples/onchain1/LICENCE-DECISION.md (written before this preregistration). Family A is computed from sources that permit publishing derived statistics: Coinbase BTC-USD daily closes (derived statistics only, as for samples 3-4) and block headers fetched by us from the Bitcoin P2P network. Family B needs UTXO-based data for which no source with commercial-publication terms is available; Family B is sealed here but NOT run in this batch.",
+  "hard_rules": [
+    "No funding-rate, open-interest, basis, liquidation or estimated-leverage data are loaded (LRI-001 lock and addendum 1).",
+    "BTC price only; no other asset; no astrological or calendar-cycle features.",
+    "On-chain data (block headers) are fetched only after this document is sealed. Before sealing, the only network contact with the Bitcoin P2P network was one version/verack handshake to confirm feasibility; the peer's advertised tip height was printed; no header was requested."
+  ],
+  "data": {
+    "price": "samples/data/raw/btc_daily.csv (Coinbase Exchange public candles API, UTC daily close, 2015-07-20 to 2026-09-24, 4,085 rows, SHA-256 064d2d183581eebe94c24ab3e69e318c369068c03adfe61bac39528f6a2d5c17, as recorded in samples/data/MANIFEST.json). Already fetched for sample 3; re-used unchanged.",
+    "block_headers": "Fetched after sealing by samples/onchain1/p2p.py via getheaders from public nodes found through the standard DNS seeds; each header must link to its predecessor and meet its own nBits proof-of-work target. Stored git-ignored at samples/onchain1/raw/headers.csv (height, timestamp, hash); its SHA-256 is recorded in samples/onchain1/MANIFEST.json. Headers with timestamps after 2026-09-24T23:59:59Z are discarded.",
+    "issuance": "Subsidy per block = floor(50e8 >> (height // 210000)) satoshi (the consensus maximum; the genesis block is counted in supply as in common practice; blocks that claimed less than the maximum are ignored as a definitional simplification). A block is assigned to the UTC calendar day of its header timestamp (miner-set; can be off by up to ~2 hours). Daily issuance (BTC) = sum of subsidies of that day's blocks. Supply(t) = cumulative subsidy up to the end of day t.",
+    "end_date": "2026-09-24 (last close used)"
+  },
+  "common_definitions": {
+    "forward_return": "F_h(t) = ln(close(t+h) / close(t)), h in calendar days {90, 180, 365}. Defined only if t+h <= 2026-09-24.",
+    "oos_window": "For each indicator, signal days t run from its OOS start (the first day after its first publication; where only the month or year is known, the first day of the following month, or 2018-01-01 for a year) or the first day the indicator is computable from the price file, whichever is later, to 2026-09-24. Days before the OOS start are used only as indicator warm-up.",
+    "unconditional_benchmark": "The mean of F_h(t) over all OOS days of that indicator with F_h defined.",
+    "conditional_statistic": "D_h = mean(F_h(t) | zone(t)) - mean(F_h(t) | all OOS days), with the zone evaluated at the close of t using data up to t only.",
+    "episodes": "Maximal runs of consecutive zone days; runs separated by fewer than 30 calendar days are merged. For crossing signals (Pi Cycle) each crossing day is an event and events within 30 days are merged. The episode count is the effective sample size and is reported for every test.",
+    "null_and_p_value": "Circular-shift null: the zone indicator series is rotated relative to the forward-return series by k days, k drawn uniformly from the integers in [h, T-h] (T = number of OOS days with F_h defined), 2,000 draws, seed 20260925. The shift preserves the zone's episode structure and the returns' autocorrelation. One-sided p in the claimed direction = (1 + #{null D_h at least as favourable to the claim as the observed D_h}) / 2001.",
+    "testability_rule": "A test is INFERENTIAL only if its zone has at least 5 episodes whose start days have F_h defined. Otherwise it is DESCRIPTIVE ONLY: D_h and the episode-level numbers are reported, no p-value is presented as evidence, and for the Holm family its p is set to 1.",
+    "top_hit": "For a top-zone episode starting on day s: HIT at window W if the highest close in [s-365, s+365] (truncated at the data end) is reached within [s-W, e+W], where e is the episode's last day. W in {3, 30, 90} days. Also reported: the maximum gain above close(s) during [s, s+365] and the 365-day forward return from s.",
+    "bottom_hit": "For a bottom-zone episode: HIT at window W if the lowest close in [s-365, e+365] is reached within [s-W, e+W]. W in {30, 90}.",
+    "claimed_direction": "Top zones claim lower-than-unconditional forward returns (D_h < 0); bottom zones claim higher (D_h > 0)."
+  },
+  "family_A_run_now": [
+    {
+      "id": "A1",
+      "indicator": "Pi Cycle Top",
+      "first_published": "Philip Swift, LookIntoBitcoin, April 2019 (creation date as stated on the LookIntoBitcoin chart page, fetched 2026-09-25).",
+      "definition": "111-day SMA of daily close (111DMA) and 2 x the 350-day SMA (2x350DMA).",
+      "rule_as_published": "The 111DMA 'moves up and crosses the 350DMA x 2'; this 'has historically been effective in picking out the timing of market cycle highs within 3 days'.",
+      "signal": "Crossing day t: 111DMA(t) > 2x350DMA(t) and 111DMA(t-1) <= 2x350DMA(t-1). Top-type.",
+      "oos_start": "2019-05-01",
+      "primary_test": "D_365 on crossing days, claimed direction negative.",
+      "secondary": "D_90, D_180; top_hit at W = 3 (the published claim), 30, 90 for every crossing; count of OOS cycle highs (highest close of each calendar-halving epoch in the OOS window) with no preceding crossing within 90 days (missed tops).",
+      "strategy_audit": "None: the published rule gives an exit signal but no re-entry rule."
+    },
+    {
+      "id": "A2",
+      "indicator": "200-week moving average heatmap (bottom claim)",
+      "first_published": "Concept by PlanB (@100trillionUSD), January 2019, as credited on the LookIntoBitcoin 200-week MA heatmap page (fetched 2026-09-25).",
+      "definition": "200WMA = mean of the last 200 weekly closes, a weekly close being the Sunday (UTC) daily close; the value computed at Sunday's close applies from that Sunday to the following Saturday.",
+      "rule_as_published": "Periods when the chart is 'purple and close to the 200 week MA' 'have historically been good times to buy'; Bitcoin has 'spent very little time below the 200 week moving average'.",
+      "signal": "Bottom zone (our operationalisation of 'close to'): close(t) <= 1.10 x 200WMA(t). Secondary zone: close(t) < 200WMA(t).",
+      "oos_start": "2019-02-01 (effective start: the first day the 200WMA is computable from the Coinbase file, ~2019-05)",
+      "primary_test": "D_365 in the 1.10x zone, claimed direction positive.",
+      "secondary": "D_90, D_180; the <1.0x zone; bottom_hit at W = 30, 90; share of OOS days below the 200WMA.",
+      "not_tested": "The heatmap's top claim ('orange and red dots' = overheated): the colour thresholds (monthly % increase of the 200WMA) were not retrievable from the creator's text, so no threshold is frozen and the claim is not tested. Recorded here so it cannot be added later with a chosen threshold.",
+      "strategy_audit": "None: no published exit rule."
+    },
+    {
+      "id": "A3",
+      "indicator": "Mayer Multiple",
+      "first_published": "Trace Mayer (The Bitcoin Knowledge Podcast / mayermultiple.info), 2017; the exact month was not verified, so the OOS start is set conservatively to 2018-01-01.",
+      "definition": "MM(t) = close(t) / SMA200(close)(t).",
+      "rule_as_published": "Historically the best long-run results came from accumulating when MM is below 2.4; above 2.4 is the overheated zone.",
+      "signal": "Top zone: MM(t) > 2.4.",
+      "oos_start": "2018-01-01",
+      "primary_test": "D_365 in the MM > 2.4 zone, claimed direction negative.",
+      "secondary": "D_90, D_180; top_hit at W = 30, 90.",
+      "strategy_audit": "Implied rule: hold BTC (position 1) when MM(t) <= 2.4, cash (0) otherwise; decided at close t, held close t to close t+1. Audited with holdout_audit, rubric v1.1, objective (a) beat buy-and-hold BTC, 10 bps per unit turnover, declared N = 1, default holdout (last 30% of the audit period), audit period = OOS window to 2026-09-24."
+    },
+    {
+      "id": "A4",
+      "indicator": "2-Year MA Multiplier ('Bitcoin Investor Tool')",
+      "first_published": "Philip Swift, July 2017 (as stated on the LookIntoBitcoin chart page, fetched 2026-09-25).",
+      "definition": "2yMA = 730-day SMA of daily close; upper line = 5 x 2yMA.",
+      "rule_as_published": "'Accumulating bitcoin when price drops below the 2yr MA ... has proven to be an astute time to purchase'; 'selling Bitcoin when price approaches the 2yr MA x 5 ... has historically proven to be effective for taking profit.'",
+      "signal": "Bottom zone: close(t) < 2yMA(t). Top zone: close(t) >= 5 x 2yMA(t) ('approaches' operationalised as reaching).",
+      "oos_start": "2017-08-01",
+      "primary_test": "D_365 in the bottom zone, claimed direction positive.",
+      "secondary": "D_365 in the top zone (negative claimed); D_90, D_180 for both; top_hit W = 30, 90; bottom_hit W = 30, 90.",
+      "strategy_audit": "Implied state machine: start flat on the first day the 2yMA exists; go long (1) at the close of a day with close < 2yMA; go flat (0) at the close of a day with close >= 5 x 2yMA; otherwise keep the state. Audited as for A3 over the OOS window."
+    },
+    {
+      "id": "A5",
+      "indicator": "Puell Multiple",
+      "first_published": "David Puell, March 2019 (as stated on the LookIntoBitcoin chart page, fetched 2026-09-25).",
+      "definition": "Puell(t) = issuance_USD(t) / SMA365(issuance_USD)(t), where issuance_USD(t) = daily issuance (BTC, from block headers) x close(t).",
+      "rule_as_published": "Red zone (issuance value far above its yearly average) has coincided with major price peaks; green zone (far below) with outsized investor returns. Numeric bands as documented by Glassnode (research scan [S12]): > 4 macro tops, < 0.5 macro bottoms. The creator's original article text was not retrieved; the Glassnode bands are frozen.",
+      "signal": "Bottom zone: Puell < 0.5. Top zone: Puell > 4.",
+      "oos_start": "2019-04-01",
+      "primary_test": "D_365 in the bottom zone, claimed direction positive.",
+      "secondary": "Top zone D_365 (negative claimed); D_90, D_180; hit rates; a separate sensitivity row using the 7-day mean of daily issuance (to damp miner-timestamp noise), reported as secondary only.",
+      "strategy_audit": "Implied state machine: start flat on the first day Puell exists; long at the close of a day with Puell < 0.5; flat at the close of a day with Puell > 4; otherwise keep the state. Audited as for A3."
+    },
+    {
+      "id": "A6",
+      "indicator": "Stock-to-flow model (PlanB)",
+      "first_published": "PlanB, 'Modeling Bitcoin's Value with Scarcity', Medium, 2019-03-22.",
+      "definition": "SF(t) = Supply(t) / (issuance over the trailing 365 days to t). Model market value = exp(14.6) x SF^3.3 USD (the published regression ln(market value) = 3.3 ln(SF) + 14.6); model price = model market value / Supply(t). PlanB built SF from monthly data; the daily trailing-365-day flow is our declared implementation.",
+      "rule_as_published": "Scarcity (SF) drives value; the model 'predicts' BTC market value, i.e. price tends toward the model price.",
+      "signal": "Bottom zone ('below model'): close(t) < model price(t). Top zone: close(t) > model price(t).",
+      "oos_start": "2019-03-23",
+      "primary_test": "D_365 in the below-model zone, claimed direction positive (price reverts up toward the model).",
+      "secondary": "Descriptive fit: mean and RMS of ln(close/model) over the OOS window by calendar year; share of OOS days with close within [model/2, 2 x model]; D_90, D_180; top-zone D_365.",
+      "strategy_audit": "Implied rule: hold BTC when close(t) < model price(t), cash otherwise. Audited as for A3."
+    }
+  ],
+  "multiple_testing": {
+    "family": "Family A primary tests A1-A6 (m = 6).",
+    "procedure": "Holm step-down at family-wise alpha = 0.05 on the one-sided p-values; DESCRIPTIVE-ONLY tests enter with p = 1. A primary claim is SUPPORTED only if its Holm-adjusted p <= 0.05; NOT SUPPORTED if an inferential test has adjusted p > 0.05; NOT TESTABLE if descriptive only. Secondary tests are reported with raw p-values and no family correction, labelled exploratory. Strategy audits are graded by the sealed rubric v1.1 and are outside the Holm family.",
+    "family_B": "When Family B is run it is a separate Holm family (m = 6) at alpha = 0.05."
+  },
+  "family_B_sealed_not_run": {
+    "status": "NOT RUN in Batch 1: no data source with commercial-publication terms (see LICENCE-DECISION.md). Run only once a written commercial licence exists or a self-computed UTXO pipeline is built. Thresholds marked UNVERIFIED must be checked against the creator's primary source before any data access; if the primary source differs, the primary source wins and the change is sealed as a pre-run amendment before data access.",
+    "tests_common": "Same definitions, null, testability rule and horizons as Family A.",
+    "indicators": [
+      {"id": "B1", "indicator": "MVRV Z-score", "first_published": "@aweandwonder, November 2018 (LookIntoBitcoin, per research scan [S25]); building on MVRV (Mahmudov & Puell, Oct 2018)", "definition": "(market cap - realized cap) / standard deviation of market cap over all history up to t", "zones": "Top: Z >= 7 (commonly quoted red-band edge; UNVERIFIED). Bottom: Z < 0 (UNVERIFIED)", "oos_start": "2018-12-01", "primary_test": "D_365 in the top zone (negative claimed); if fewer than 5 episodes, descriptive; top_hit at W = 14 (the 'within two weeks' claim), 30, 90"},
+      {"id": "B2", "indicator": "NUPL", "first_published": "Demeester, Blummer & Lescrauwaet (Adamant Research), February 2019", "definition": "(market cap - realized cap) / market cap", "zones": "Top: NUPL >= 0.75 (euphoria). Bottom: NUPL < 0 (capitulation)", "oos_start": "2019-03-01", "primary_test": "D_365 in the bottom zone (positive claimed)"},
+      {"id": "B3", "indicator": "SOPR (unadjusted, as first published)", "first_published": "Renato Shirakashi, 2019 (month UNVERIFIED; OOS start set to 2020-01-01)", "definition": "sum of USD value of spent outputs at spend / at creation, daily; 7-day SMA", "zones": "Bull-regime reset: close > SMA200 and SOPR 7-day SMA <= 1", "oos_start": "2020-01-01", "primary_test": "D_90 in the reset zone (positive claimed: resets to 1 act as support in bull regimes)"},
+      {"id": "B4", "indicator": "Reserve Risk", "first_published": "Hans Hauge, 2019 (month UNVERIFIED; OOS start 2020-01-01)", "definition": "price / HODL Bank (cumulative opportunity cost of not selling), as per Glassnode [S13]", "zones": "Bottom: < 0.0026. Top: > 0.02 (Glassnode bands [S13]; UNVERIFIED against creator)", "oos_start": "2020-01-01", "primary_test": "D_365 in the bottom zone (positive claimed)"},
+      {"id": "B5", "indicator": "Short-term-holder cost basis (155-day cohort realized price)", "first_published": "Glassnode STH/LTH framework (date UNVERIFIED; OOS start set to 2021-07-01 unless the primary source shows an earlier date, in which case the later date still binds)", "definition": "realized price of coins younger than 155 days (Glassnode logistic weighting [S14])", "zones": "Bull regime: close > STH cost basis. Bear regime: close < STH cost basis", "oos_start": "2021-07-01", "primary_test": "D_90 in the bull regime (positive claimed); strategy audit: hold BTC when close > STH cost basis, else cash, rubric v1.1 objective (a)"},
+      {"id": "B6", "indicator": "Realized price", "first_published": "Carter & Le Calvez (Coin Metrics), 'Realized capitalization', October 2018", "definition": "realized cap / supply", "zones": "Bottom: close < realized price", "oos_start": "2018-11-01", "primary_test": "D_365 in the bottom zone (positive claimed)"}
+    ]
+  },
+  "expected_event_counts_disclosure": "Stated before any on-chain value is seen: cycle-top signals (Pi Cycle crossings, Mayer > 2.4, 5 x 2yMA, Puell > 4) are expected to have between 0 and 3 out-of-sample episodes each, because there have been at most two BTC cycle tops since 2017-2019. Tests with fewer than 5 episodes are reported as descriptive only; we will not present a p-value from one or two episodes as evidence. Bottom zones may have more episodes but still few independent ones.",
+  "exposure_disclosure": "The auditors have seen the BTC price path through 2026-09-24 (Celestial Phase I; Holdout Labs samples 3 and 4). Four of the six Family A indicators are pure functions of price, and Puell and stock-to-flow depend on price and on a near-deterministic issuance schedule. So this is a post-publication test of rules we did not design, frozen here as the creators published them; it is NOT a blind test. The protection against our own bias is that every threshold, window and test is fixed in this sealed document and taken from the creators' publications, and that all results are published. Well-known outcomes (e.g. the April 2021 Pi Cycle crossing) were public knowledge before this document; we disclose that we expect Pi Cycle to show one or two OOS crossings, without having computed them. No on-chain value series (block headers or any vendor metric) has been accessed by this study.",
+  "rubric": "Strategy audits: Holdout Labs Fragility Rubric v1.1 (docs/RUBRIC-v1.1.md, SHA-256 2311b126336bab9f426a84f9c9cd9cb937e346b403a62f60e3c96ed8b5868e46), objective (a) beat buy-and-hold BTC. Grades are reported whatever they are.",
+  "settings": {"circular_shift_draws": 2000, "seed": 20260925, "bootstrap_draws": 1000, "cost_bps": 10, "periods_per_year": 365, "alpha_familywise": 0.05, "min_episodes_for_inference": 5, "episode_merge_gap_days": 30},
+  "commitments": [
+    "Publish every Family A result, supported or not, in samples/onchain1/ and on the public site page /audits/onchain-1/.",
+    "No change to rules, thresholds, windows, horizons, tests, the family or the testability rule after sealing. Any deviation (including a code bug fix that changes a number) is listed as a deviation in the report with its effect.",
+    "Run once. If the header download fails, the fetch may be retried with other peers; results are computed only once the full, verified header chain is in hand.",
+    "Family B is not run and not described as tested."
+  ],
+  "language": "Reports describe statistical properties of past data. No wording such as buy, sell, take profit or accumulate is used except when quoting a creator's published claim."
+}

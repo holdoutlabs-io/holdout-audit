@@ -1,0 +1,8 @@
+{
+  "objective": "reduce_drawdown",
+  "max_return_shortfall_annual": 0.01,
+  "benchmark": "equal-weight buy-and-hold of the same three ETFs, rebalanced monthly",
+  "declared_at_utc": "2026-09-25T20:39:29Z",
+  "declared_by": "holdout-labs-batch-3/gtaa-eem-vnq-tlt",
+  "source_claim": "Timing each asset class with a 10-month SMA gives equity-like returns with bond-like volatility and much smaller drawdowns than buy-and-hold."
+}

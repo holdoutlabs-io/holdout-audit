@@ -1,0 +1,1310 @@
+{
+  "prereg_sha256": "aafe3c37f5bbf83bc6e4b9a986ef1c936c3b74a927c253b833a5a7626482de40",
+  "price_notes": [],
+  "halvings": {
+    "210000": "2012-11-28",
+    "420000": "2016-07-09",
+    "630000": "2020-05-11",
+    "840000": "2024-04-20"
+  },
+  "headers": {
+    "source": "Bitcoin P2P network (getheaders from DNS-seed peers); every header prev-hash-linked and PoW-checked",
+    "fetch_started_utc": "2026-09-25T18:23:09Z",
+    "rows": 968471,
+    "max_height": 968470,
+    "cutoff": "timestamp < 2026-09-25T00:00:00Z",
+    "sha256": "a69bc2d867edf4e5c46ea5b87aeb0e1fbc24ff795d7776b72407abe4f9025b15",
+    "tip_height_seen": 968572
+  },
+  "indicators": {
+    "A1": {
+      "name": "Pi Cycle Top",
+      "oos_start_effective": "2019-05-01",
+      "kind": "top",
+      "tests": {
+        "D90": {
+          "h": 90,
+          "T": 2614,
+          "zone_days": 1,
+          "episodes": 1,
+          "episode_starts": [
+            "2021-04-12"
+          ],
+          "unconditional_mean": 0.07073209343085901,
+          "conditional_mean": -0.5577153081866297,
+          "D": -0.6284474016174888,
+          "p_one_sided": 0.017991004497751123,
+          "inferential": false,
+          "conditional_simple_return": -0.42748440753999584,
+          "unconditional_simple_return": 0.07329364492957224
+        },
+        "D180": {
+          "h": 180,
+          "T": 2524,
+          "zone_days": 1,
+          "episodes": 1,
+          "episode_starts": [
+            "2021-04-12"
+          ],
+          "unconditional_mean": 0.14516033123838795,
+          "conditional_mean": -0.08502401192757818,
+          "D": -0.23018434316596614,
+          "p_one_sided": 0.33483258370814595,
+          "inferential": false,
+          "conditional_simple_return": -0.08150977058420295,
+          "unconditional_simple_return": 0.15622493438338014
+        },
+        "primary_D365": {
+          "h": 365,
+          "T": 2339,
+          "zone_days": 1,
+          "episodes": 1,
+          "episode_starts": [
+            "2021-04-12"
+          ],
+          "unconditional_mean": 0.34756569932221004,
+          "conditional_mean": -0.4006384418213499,
+          "D": -0.7482041411435599,
+          "p_one_sided": 0.05697151424287856,
+          "inferential": false,
+          "conditional_simple_return": -0.3301077777306147,
+          "unconditional_simple_return": 0.4156173126575149
+        }
+      },
+      "hits": [
+        {
+          "start": "2021-04-12",
+          "end": "2021-04-12",
+          "days": 1,
+          "extreme_date": "2021-11-08",
+          "window_complete": true,
+          "days_from_start_to_extreme": 210,
+          "hit_W3": false,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 0.12892786107979592,
+          "fwd365_from_start": -0.3301077777306147,
+          "min_after_start_365d": -0.5020680209265336
+        }
+      ],
+      "holm": {
+        "p_entered": 1.0,
+        "p_holm": 1.0,
+        "status": "NOT TESTABLE (descriptive only)"
+      },
+      "epoch_tops": [
+        {
+          "epoch": "2019-05-01..2020-05-11",
+          "highest_close_date": "2019-06-26",
+          "crossing_within_90d_before": [],
+          "missed": true
+        },
+        {
+          "epoch": "2020-05-11..2024-04-20",
+          "highest_close_date": "2024-03-13",
+          "crossing_within_90d_before": [],
+          "missed": true
+        },
+        {
+          "epoch": "2024-04-20..2026-09-24",
+          "highest_close_date": "2025-10-06",
+          "crossing_within_90d_before": [],
+          "missed": true
+        }
+      ]
+    },
+    "A2": {
+      "name": "200-week MA heatmap (bottom claim)",
+      "oos_start_effective": "2019-05-19",
+      "kind": "bottom",
+      "tests": {
+        "D90": {
+          "h": 90,
+          "T": 2596,
+          "zone_days": 470,
+          "episodes": 5,
+          "episode_starts": [
+            "2020-03-12",
+            "2022-06-13",
+            "2023-07-24",
+            "2026-02-05",
+            "2026-06-02"
+          ],
+          "unconditional_mean": 0.06762788337216201,
+          "conditional_mean": 0.14786431571697378,
+          "D": 0.08023643234481177,
+          "p_one_sided": 0.375312343828086,
+          "inferential": true,
+          "conditional_simple_return": 0.15935557935993505,
+          "unconditional_simple_return": 0.06996708184759926
+        },
+        "D180": {
+          "h": 180,
+          "T": 2506,
+          "zone_days": 445,
+          "episodes": 4,
+          "episode_starts": [
+            "2020-03-12",
+            "2022-06-13",
+            "2023-07-24",
+            "2026-02-05"
+          ],
+          "unconditional_mean": 0.1438125124568307,
+          "conditional_mean": 0.33999525106178785,
+          "D": 0.19618273860495716,
+          "p_one_sided": 0.3233383308345827,
+          "inferential": false,
+          "conditional_simple_return": 0.40494091857013736,
+          "unconditional_simple_return": 0.15466760243749245
+        },
+        "primary_D365": {
+          "h": 365,
+          "T": 2321,
+          "zone_days": 443,
+          "episodes": 3,
+          "episode_starts": [
+            "2020-03-12",
+            "2022-06-13",
+            "2023-07-24"
+          ],
+          "unconditional_mean": 0.34759876978089677,
+          "conditional_mean": 0.7017663867379224,
+          "D": 0.3541676169570256,
+          "p_one_sided": 0.23288355822088955,
+          "inferential": false,
+          "conditional_simple_return": 1.0173129169741428,
+          "unconditional_simple_return": 0.4156641285454765
+        },
+        "below_200wma_D365": {
+          "h": 365,
+          "T": 2321,
+          "zone_days": 322,
+          "episodes": 4,
+          "episode_starts": [
+            "2020-03-12",
+            "2022-06-14",
+            "2023-06-05",
+            "2023-08-17"
+          ],
+          "unconditional_mean": 0.34759876978089677,
+          "conditional_mean": 0.6902940727431748,
+          "D": 0.342695302962278,
+          "p_one_sided": 0.23788105947026486,
+          "inferential": false,
+          "conditional_simple_return": 0.9943019168545462,
+          "unconditional_simple_return": 0.4156641285454765
+        },
+        "below_200wma_D90": {
+          "h": 90,
+          "T": 2596,
+          "zone_days": 329,
+          "episodes": 5,
+          "episode_starts": [
+            "2020-03-12",
+            "2022-06-14",
+            "2023-06-05",
+            "2023-08-17",
+            "2026-06-05"
+          ],
+          "unconditional_mean": 0.06762788337216201,
+          "conditional_mean": 0.18302770178958563,
+          "D": 0.11539981841742362,
+          "p_one_sided": 0.2193903048475762,
+          "inferential": true,
+          "conditional_simple_return": 0.20084767324964514,
+          "unconditional_simple_return": 0.06996708184759926
+        }
+      },
+      "hits": [
+        {
+          "start": "2020-03-12",
+          "end": "2020-03-29",
+          "days": 18,
+          "extreme_date": "2019-03-13",
+          "window_complete": true,
+          "days_from_start_to_extreme": -365,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 10.903290029029668,
+          "fwd365_from_start": 10.781908958020217,
+          "min_after_start_365d": 0.0
+        },
+        {
+          "start": "2022-06-13",
+          "end": "2023-06-20",
+          "days": 373,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": 161,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.3575958651830262,
+          "fwd365_from_start": 0.15445726520270497,
+          "min_after_start_365d": -0.2983321735437072
+        },
+        {
+          "start": "2023-07-24",
+          "end": "2023-10-22",
+          "days": 91,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": -245,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 1.5066007516884885,
+          "fwd365_from_start": 1.2599748157622894,
+          "min_after_start_365d": -0.13794573667322663
+        },
+        {
+          "start": "2026-02-05",
+          "end": "2026-02-24",
+          "days": 20,
+          "extreme_date": "2026-06-30",
+          "window_complete": false,
+          "days_from_start_to_extreme": 145,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 0.37909795989871165,
+          "fwd365_from_start": null,
+          "min_after_start_365d": -0.06795671354174959
+        },
+        {
+          "start": "2026-06-02",
+          "end": "2026-08-19",
+          "days": 79,
+          "extreme_date": "2026-06-30",
+          "window_complete": false,
+          "days_from_start_to_extreme": 28,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.2990861609985844,
+          "fwd365_from_start": null,
+          "min_after_start_365d": -0.1220315234325483
+        }
+      ],
+      "hits_below_200wma": [
+        {
+          "start": "2020-03-12",
+          "end": "2020-03-18",
+          "days": 7,
+          "extreme_date": "2019-03-13",
+          "window_complete": true,
+          "days_from_start_to_extreme": -365,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 10.903290029029668,
+          "fwd365_from_start": 10.781908958020217,
+          "min_after_start_365d": 0.0
+        },
+        {
+          "start": "2022-06-14",
+          "end": "2023-03-16",
+          "days": 276,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": 160,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.3785070241068704,
+          "fwd365_from_start": 0.13576202800601256,
+          "min_after_start_365d": -0.2875243272566992
+        },
+        {
+          "start": "2023-06-05",
+          "end": "2023-06-18",
+          "days": 14,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": -196,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 1.8411335780743157,
+          "fwd365_from_start": 1.740412174892683,
+          "min_after_start_365d": -0.024014140590097655
+        },
+        {
+          "start": "2023-08-17",
+          "end": "2023-10-15",
+          "days": 60,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": -269,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 1.7465908455033632,
+          "fwd365_from_start": 1.2115795771074866,
+          "min_after_start_365d": -0.05540986278507576
+        },
+        {
+          "start": "2026-06-05",
+          "end": "2026-08-16",
+          "days": 73,
+          "extreme_date": "2026-06-30",
+          "window_complete": false,
+          "days_from_start_to_extreme": 25,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.4188448682658279,
+          "fwd365_from_start": null,
+          "min_after_start_365d": -0.04109434395071443
+        }
+      ],
+      "holm": {
+        "p_entered": 1.0,
+        "p_holm": 1.0,
+        "status": "NOT TESTABLE (descriptive only)"
+      },
+      "share_days_below_200wma": 0.12918838421444528
+    },
+    "A3": {
+      "name": "Mayer Multiple",
+      "oos_start_effective": "2018-01-01",
+      "kind": "top",
+      "tests": {
+        "D90": {
+          "h": 90,
+          "T": 3099,
+          "zone_days": 28,
+          "episodes": 3,
+          "episode_starts": [
+            "2018-01-05",
+            "2019-06-26",
+            "2021-01-03"
+          ],
+          "unconditional_mean": 0.055615927633409674,
+          "conditional_mean": -0.0474859918080374,
+          "D": -0.10310191944144707,
+          "p_one_sided": 0.4172913543228386,
+          "inferential": false,
+          "conditional_simple_return": -0.046376168415244834,
+          "unconditional_simple_return": 0.05719156768528677
+        },
+        "D180": {
+          "h": 180,
+          "T": 3009,
+          "zone_days": 28,
+          "episodes": 3,
+          "episode_starts": [
+            "2018-01-05",
+            "2019-06-26",
+            "2021-01-03"
+          ],
+          "unconditional_mean": 0.12407577732724288,
+          "conditional_mean": -0.21054612884861748,
+          "D": -0.33462190617586035,
+          "p_one_sided": 0.263368315842079,
+          "inferential": false,
+          "conditional_simple_return": -0.18985831661167563,
+          "unconditional_simple_return": 0.13210165538649066
+        },
+        "primary_D365": {
+          "h": 365,
+          "T": 2824,
+          "zone_days": 28,
+          "episodes": 3,
+          "episode_starts": [
+            "2018-01-05",
+            "2019-06-26",
+            "2021-01-03"
+          ],
+          "unconditional_mean": 0.3102114394882079,
+          "conditional_mean": -0.24134455023439694,
+          "D": -0.5515559897226048,
+          "p_one_sided": 0.15692153923038482,
+          "inferential": false,
+          "conditional_simple_return": -0.21442908888804135,
+          "unconditional_simple_return": 0.36371342651975747
+        }
+      },
+      "hits": [
+        {
+          "start": "2018-01-05",
+          "end": "2018-01-07",
+          "days": 3,
+          "extreme_date": "2017-12-16",
+          "window_complete": true,
+          "days_from_start_to_extreme": -20,
+          "hit_W3": false,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.008194570639993959,
+          "fwd365_from_start": -0.7760248962117358,
+          "min_after_start_365d": -0.8123232238660236
+        },
+        {
+          "start": "2019-06-26",
+          "end": "2019-06-26",
+          "days": 1,
+          "extreme_date": "2019-06-26",
+          "window_complete": true,
+          "days_from_start_to_extreme": 0,
+          "hit_W3": true,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.0,
+          "fwd365_from_start": -0.2849698006720588,
+          "min_after_start_365d": -0.6242798264776321
+        },
+        {
+          "start": "2021-01-03",
+          "end": "2021-03-13",
+          "days": 70,
+          "extreme_date": "2021-11-08",
+          "window_complete": true,
+          "days_from_start_to_extreme": 309,
+          "hit_W3": false,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 1.0421249152828267,
+          "fwd365_from_start": 0.40443268060552584,
+          "min_after_start_365d": -0.09928762001725489
+        }
+      ],
+      "strategy": {
+        "name": "ONCHAIN-1 A3: Mayer Multiple, implied rule, post-publication",
+        "rubric_version": "1.1",
+        "objective": "beat_benchmark",
+        "benchmark": "market",
+        "grade": "F",
+        "score": 0.25,
+        "caps": [],
+        "sr_annual": 0.704,
+        "excess_sr_annual": 0.319,
+        "excess_return_annual": 0.0313,
+        "beats_benchmark": false,
+        "dsr": 0.8394,
+        "n_trials": 1,
+        "pbo": null,
+        "haircut_p": 0.1726,
+        "spa_p": 0.124,
+        "holdout_excess_sr_is": 0.382,
+        "holdout_excess_sr_oos": 0.0,
+        "max_drawdown": 0.7881,
+        "checks": {
+          "dsr": "CAUTION",
+          "pbo": "N/A",
+          "haircut": "FAIL",
+          "spa": "FAIL",
+          "holdout": "FAIL",
+          "stability": "FAIL",
+          "costs": "PASS",
+          "surface": "N/A"
+        }
+      },
+      "holm": {
+        "p_entered": 1.0,
+        "p_holm": 1.0,
+        "status": "NOT TESTABLE (descriptive only)"
+      }
+    },
+    "A4": {
+      "name": "2-Year MA Multiplier",
+      "oos_start_effective": "2017-08-01",
+      "kind": "bottom",
+      "tests": {
+        "D90": {
+          "h": 90,
+          "T": 3252,
+          "zone_days": 942,
+          "episodes": 5,
+          "episode_starts": [
+            "2018-11-16",
+            "2019-10-23",
+            "2020-03-12",
+            "2022-05-08",
+            "2026-01-29"
+          ],
+          "unconditional_mean": 0.07676615848319014,
+          "conditional_mean": 0.14879353138746737,
+          "D": 0.07202737290427723,
+          "p_one_sided": 0.22288855572213892,
+          "inferential": true,
+          "conditional_simple_return": 0.16043337140502856,
+          "unconditional_simple_return": 0.0797895472422887
+        },
+        "D180": {
+          "h": 180,
+          "T": 3162,
+          "zone_days": 852,
+          "episodes": 5,
+          "episode_starts": [
+            "2018-11-16",
+            "2019-10-23",
+            "2020-03-12",
+            "2022-05-08",
+            "2026-01-29"
+          ],
+          "unconditional_mean": 0.13143788936078943,
+          "conditional_mean": 0.37471898283459,
+          "D": 0.24328109347380056,
+          "p_one_sided": 0.11794102948525736,
+          "inferential": true,
+          "conditional_simple_return": 0.45458259450059524,
+          "unconditional_simple_return": 0.1404670703837776
+        },
+        "primary_D365": {
+          "h": 365,
+          "T": 2977,
+          "zone_days": 793,
+          "episodes": 4,
+          "episode_starts": [
+            "2018-11-16",
+            "2019-10-23",
+            "2020-03-12",
+            "2022-05-08"
+          ],
+          "unconditional_mean": 0.28814922099316204,
+          "conditional_mean": 0.7313204050927901,
+          "D": 0.443171184099628,
+          "p_one_sided": 0.17491254372813594,
+          "inferential": false,
+          "conditional_simple_return": 1.0778223643928655,
+          "unconditional_simple_return": 0.3339563435630051
+        },
+        "top_5x_D365": {
+          "h": 365,
+          "T": 2977,
+          "zone_days": 68,
+          "episodes": 2,
+          "episode_starts": [
+            "2017-09-01",
+            "2017-11-02"
+          ],
+          "unconditional_mean": 0.28814922099316204,
+          "conditional_mean": -1.1012247198337293,
+          "D": -1.3893739408268913,
+          "p_one_sided": 0.022988505747126436,
+          "inferential": false,
+          "conditional_simple_return": -0.667536340578978,
+          "unconditional_simple_return": 0.3339563435630051
+        },
+        "top_5x_D90": {
+          "h": 90,
+          "T": 3252,
+          "zone_days": 68,
+          "episodes": 2,
+          "episode_starts": [
+            "2017-09-01",
+            "2017-11-02"
+          ],
+          "unconditional_mean": 0.07676615848319014,
+          "conditional_mean": -0.33539195740632133,
+          "D": -0.41215811588951146,
+          "p_one_sided": 0.07746126936531735,
+          "inferential": false,
+          "conditional_simple_return": -0.2849422407666755,
+          "unconditional_simple_return": 0.0797895472422887
+        }
+      },
+      "hits": [
+        {
+          "start": "2018-11-16",
+          "end": "2019-05-09",
+          "days": 175,
+          "extreme_date": "2018-12-15",
+          "window_complete": true,
+          "days_from_start_to_extreme": 29,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 1.3452244459602634,
+          "fwd365_from_start": 0.5385759691160037,
+          "min_after_start_365d": -0.4225577986444712
+        },
+        {
+          "start": "2019-10-23",
+          "end": "2020-01-05",
+          "days": 75,
+          "extreme_date": "2018-12-15",
+          "window_complete": true,
+          "days_from_start_to_extreme": -312,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 0.7374288447259811,
+          "fwd365_from_start": 0.7374288447259811,
+          "min_after_start_365d": -0.35020769647551453
+        },
+        {
+          "start": "2020-03-12",
+          "end": "2020-04-22",
+          "days": 42,
+          "extreme_date": "2019-03-13",
+          "window_complete": true,
+          "days_from_start_to_extreme": -365,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 10.903290029029668,
+          "fwd365_from_start": 10.781908958020217,
+          "min_after_start_365d": 0.0
+        },
+        {
+          "start": "2022-05-08",
+          "end": "2023-10-22",
+          "days": 533,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": 197,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.0,
+          "fwd365_from_start": -0.18610752173730338,
+          "min_after_start_365d": -0.5368466649876529
+        },
+        {
+          "start": "2026-01-29",
+          "end": "2026-09-24",
+          "days": 239,
+          "extreme_date": "2026-06-30",
+          "window_complete": false,
+          "days_from_start_to_extreme": 152,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.024632128472238612,
+          "fwd365_from_start": null,
+          "min_after_start_365d": -0.30751728724033645
+        }
+      ],
+      "hits_top_5x": [
+        {
+          "start": "2017-09-01",
+          "end": "2017-09-01",
+          "days": 1,
+          "extreme_date": "2017-12-16",
+          "window_complete": true,
+          "days_from_start_to_extreme": 106,
+          "hit_W3": false,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 2.9713115830872736,
+          "fwd365_from_start": 0.4533335758560548,
+          "min_after_start_365d": -0.34308678877685683
+        },
+        {
+          "start": "2017-11-02",
+          "end": "2018-01-15",
+          "days": 75,
+          "extreme_date": "2017-12-16",
+          "window_complete": true,
+          "days_from_start_to_extreme": 44,
+          "hit_W3": true,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 1.7912025318253746,
+          "fwd365_from_start": -0.09803721033298385,
+          "min_after_start_365d": -0.1687959340793581
+        }
+      ],
+      "strategy": {
+        "name": "ONCHAIN-1 A4: 2-Year MA Multiplier, implied rule, post-publication",
+        "rubric_version": "1.1",
+        "objective": "beat_benchmark",
+        "benchmark": "market",
+        "grade": "F",
+        "score": 0.167,
+        "caps": [],
+        "sr_annual": 0.807,
+        "excess_sr_annual": -0.38,
+        "excess_return_annual": -0.1275,
+        "beats_benchmark": false,
+        "dsr": 0.1222,
+        "n_trials": 1,
+        "pbo": null,
+        "haircut_p": 0.8751,
+        "spa_p": 1.0,
+        "holdout_excess_sr_is": -0.455,
+        "holdout_excess_sr_oos": 0.0,
+        "max_drawdown": 0.7667,
+        "checks": {
+          "dsr": "FAIL",
+          "pbo": "N/A",
+          "haircut": "FAIL",
+          "spa": "FAIL",
+          "holdout": "FAIL",
+          "stability": "FAIL",
+          "costs": "PASS",
+          "surface": "N/A"
+        }
+      },
+      "holm": {
+        "p_entered": 1.0,
+        "p_holm": 1.0,
+        "status": "NOT TESTABLE (descriptive only)"
+      }
+    },
+    "A5": {
+      "name": "Puell Multiple",
+      "oos_start_effective": "2019-04-01",
+      "kind": "bottom",
+      "tests": {
+        "D90": {
+          "h": 90,
+          "T": 2644,
+          "zone_days": 99,
+          "episodes": 4,
+          "episode_starts": [
+            "2020-03-16",
+            "2020-05-12",
+            "2021-06-27",
+            "2022-06-13"
+          ],
+          "unconditional_mean": 0.07822140721111615,
+          "conditional_mean": 0.08541925631203444,
+          "D": 0.007197849100918294,
+          "p_one_sided": 0.463768115942029,
+          "inferential": false,
+          "conditional_simple_return": 0.08917361389909195,
+          "unconditional_simple_return": 0.08136205352370918
+        },
+        "D180": {
+          "h": 180,
+          "T": 2554,
+          "zone_days": 99,
+          "episodes": 4,
+          "episode_starts": [
+            "2020-03-16",
+            "2020-05-12",
+            "2021-06-27",
+            "2022-06-13"
+          ],
+          "unconditional_mean": 0.14899620794182566,
+          "conditional_mean": 0.2626235016711048,
+          "D": 0.11362729372927916,
+          "p_one_sided": 0.2608695652173913,
+          "inferential": false,
+          "conditional_simple_return": 0.3003370520510258,
+          "unconditional_simple_return": 0.16066858787793414
+        },
+        "primary_D365": {
+          "h": 365,
+          "T": 2369,
+          "zone_days": 99,
+          "episodes": 4,
+          "episode_starts": [
+            "2020-03-16",
+            "2020-05-12",
+            "2021-06-27",
+            "2022-06-13"
+          ],
+          "unconditional_mean": 0.34731694140526753,
+          "conditional_mean": 0.7161723915257894,
+          "D": 0.36885545012052184,
+          "p_one_sided": 0.22338830584707647,
+          "inferential": false,
+          "conditional_simple_return": 1.046584674820377,
+          "unconditional_simple_return": 0.41526521043955333
+        },
+        "top_gt4_D365": {
+          "h": 365,
+          "T": 2369,
+          "zone_days": 0,
+          "episodes": 0,
+          "episode_starts": [],
+          "unconditional_mean": 0.34731694140526753,
+          "conditional_mean": null,
+          "D": null,
+          "p_one_sided": null,
+          "inferential": false
+        },
+        "top_gt4_D90": {
+          "h": 90,
+          "T": 2644,
+          "zone_days": 0,
+          "episodes": 0,
+          "episode_starts": [],
+          "unconditional_mean": 0.07822140721111615,
+          "conditional_mean": null,
+          "D": null,
+          "p_one_sided": null,
+          "inferential": false
+        },
+        "sensitivity_7d_bottom_D365": {
+          "h": 365,
+          "T": 2369,
+          "zone_days": 83,
+          "episodes": 4,
+          "episode_starts": [
+            "2020-05-18",
+            "2022-06-16",
+            "2022-09-06",
+            "2022-11-09"
+          ],
+          "unconditional_mean": 0.34731694140526753,
+          "conditional_mean": 0.6050597534070585,
+          "D": 0.257742812001791,
+          "p_one_sided": 0.27786106946526734,
+          "inferential": false,
+          "conditional_simple_return": 0.8313616357137179,
+          "unconditional_simple_return": 0.41526521043955333
+        },
+        "sensitivity_7d_bottom_D90": {
+          "h": 90,
+          "T": 2644,
+          "zone_days": 83,
+          "episodes": 4,
+          "episode_starts": [
+            "2020-05-18",
+            "2022-06-16",
+            "2022-09-06",
+            "2022-11-09"
+          ],
+          "unconditional_mean": 0.07822140721111615,
+          "conditional_mean": 0.04941805674811144,
+          "D": -0.028803350463004702,
+          "p_one_sided": 0.5527236381809095,
+          "inferential": false,
+          "conditional_simple_return": 0.05065949423171312,
+          "unconditional_simple_return": 0.08136205352370918
+        }
+      },
+      "hits": [
+        {
+          "start": "2020-03-16",
+          "end": "2020-03-25",
+          "days": 10,
+          "extreme_date": "2019-03-25",
+          "window_complete": true,
+          "days_from_start_to_extreme": -357,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 11.14435019781206,
+          "fwd365_from_start": 10.300420238962525,
+          "min_after_start_365d": 0.0
+        },
+        {
+          "start": "2020-05-12",
+          "end": "2020-07-17",
+          "days": 67,
+          "extreme_date": "2020-03-12",
+          "window_complete": true,
+          "days_from_start_to_extreme": -61,
+          "hit_W30": false,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 6.208388218676812,
+          "fwd365_from_start": 4.611202051370414,
+          "min_after_start_365d": -0.011981064273098974
+        },
+        {
+          "start": "2021-06-27",
+          "end": "2021-06-27",
+          "days": 1,
+          "extreme_date": "2020-06-27",
+          "window_complete": true,
+          "days_from_start_to_extreme": -365,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 0.9463076536125978,
+          "fwd365_from_start": -0.40289168039740453,
+          "min_after_start_365d": -0.4540676932331833
+        },
+        {
+          "start": "2022-06-13",
+          "end": "2022-12-27",
+          "days": 198,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": 161,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.3575958651830262,
+          "fwd365_from_start": 0.15445726520270497,
+          "min_after_start_365d": -0.2983321735437072
+        }
+      ],
+      "hits_top_gt4": [],
+      "hits_sensitivity_7d_bottom": [
+        {
+          "start": "2020-05-18",
+          "end": "2020-05-30",
+          "days": 13,
+          "extreme_date": "2020-03-12",
+          "window_complete": true,
+          "days_from_start_to_extreme": -67,
+          "hit_W30": false,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 5.536268620509595,
+          "fwd365_from_start": 3.4053103658110384,
+          "min_after_start_365d": -0.10410524930821963
+        },
+        {
+          "start": "2022-06-16",
+          "end": "2022-07-26",
+          "days": 41,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": 158,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 0.4968054192028273,
+          "fwd365_from_start": 0.2924406047516197,
+          "min_after_start_365d": -0.22638228941684668
+        },
+        {
+          "start": "2022-09-06",
+          "end": "2022-09-28",
+          "days": 23,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": 76,
+          "hit_W30": false,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 0.6748433151986786,
+          "fwd365_from_start": 0.37021730187627955,
+          "min_after_start_365d": -0.1612891552351643
+        },
+        {
+          "start": "2022-11-09",
+          "end": "2022-12-01",
+          "days": 23,
+          "extreme_date": "2022-11-21",
+          "window_complete": true,
+          "days_from_start_to_extreme": 12,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 1.3097585194022638,
+          "fwd365_from_start": 1.3097585194022638,
+          "min_after_start_365d": -0.00829476036939436
+        }
+      ],
+      "strategy": {
+        "name": "ONCHAIN-1 A5: Puell Multiple, implied rule, post-publication",
+        "rubric_version": "1.1",
+        "objective": "beat_benchmark",
+        "benchmark": "market",
+        "grade": "F",
+        "score": 0.167,
+        "caps": [],
+        "sr_annual": 0.964,
+        "excess_sr_annual": 0.0,
+        "excess_return_annual": 0.0,
+        "beats_benchmark": false,
+        "dsr": 0.5,
+        "n_trials": 1,
+        "pbo": null,
+        "haircut_p": 0.5,
+        "spa_p": 1.0,
+        "holdout_excess_sr_is": 0.0,
+        "holdout_excess_sr_oos": 0.0,
+        "max_drawdown": 0.7667,
+        "checks": {
+          "dsr": "FAIL",
+          "pbo": "N/A",
+          "haircut": "FAIL",
+          "spa": "FAIL",
+          "holdout": "FAIL",
+          "stability": "FAIL",
+          "costs": "PASS",
+          "surface": "N/A"
+        }
+      },
+      "holm": {
+        "p_entered": 1.0,
+        "p_holm": 1.0,
+        "status": "NOT TESTABLE (descriptive only)"
+      }
+    },
+    "A6": {
+      "name": "Stock-to-flow (PlanB 2019)",
+      "oos_start_effective": "2019-03-23",
+      "kind": "bottom",
+      "tests": {
+        "D90": {
+          "h": 90,
+          "T": 2653,
+          "zone_days": 2073,
+          "episodes": 6,
+          "episode_starts": [
+            "2019-03-23",
+            "2020-03-12",
+            "2020-07-20",
+            "2020-08-27",
+            "2021-01-27",
+            "2021-04-18"
+          ],
+          "unconditional_mean": 0.0814993261241842,
+          "conditional_mean": 0.09487399954937278,
+          "D": 0.013374673425188582,
+          "p_one_sided": 0.3333333333333333,
+          "inferential": true,
+          "conditional_simple_return": 0.09952030634360876,
+          "unconditional_simple_return": 0.08491248648746641
+        },
+        "D180": {
+          "h": 180,
+          "T": 2563,
+          "zone_days": 1983,
+          "episodes": 6,
+          "episode_starts": [
+            "2019-03-23",
+            "2020-03-12",
+            "2020-07-20",
+            "2020-08-27",
+            "2021-01-27",
+            "2021-04-18"
+          ],
+          "unconditional_mean": 0.15139622206678785,
+          "conditional_mean": 0.13618094100986203,
+          "D": -0.015215281056925822,
+          "p_one_sided": 0.6371814092953523,
+          "inferential": true,
+          "conditional_simple_return": 0.14588921318941228,
+          "unconditional_simple_return": 0.1634575543239538
+        },
+        "primary_D365": {
+          "h": 365,
+          "T": 2378,
+          "zone_days": 1798,
+          "episodes": 6,
+          "episode_starts": [
+            "2019-03-23",
+            "2020-03-12",
+            "2020-07-20",
+            "2020-08-27",
+            "2021-01-27",
+            "2021-04-18"
+          ],
+          "unconditional_mean": 0.34775511983230006,
+          "conditional_mean": 0.22940855137835453,
+          "D": -0.11834656845394553,
+          "p_one_sided": 0.9375312343828086,
+          "inferential": true,
+          "conditional_simple_return": 0.2578558327813698,
+          "unconditional_simple_return": 0.4158854850088407
+        },
+        "above_model_D365": {
+          "h": 365,
+          "T": 2378,
+          "zone_days": 580,
+          "episodes": 2,
+          "episode_starts": [
+            "2019-05-10",
+            "2020-12-17"
+          ],
+          "unconditional_mean": 0.34775511983230006,
+          "conditional_mean": 0.7146294820395311,
+          "D": 0.3668743622072311,
+          "p_one_sided": 0.9375312343828086,
+          "inferential": false,
+          "conditional_simple_return": 1.043429414677512,
+          "unconditional_simple_return": 0.4158854850088407
+        },
+        "above_model_D90": {
+          "h": 90,
+          "T": 2653,
+          "zone_days": 580,
+          "episodes": 2,
+          "episode_starts": [
+            "2019-05-10",
+            "2020-12-17"
+          ],
+          "unconditional_mean": 0.0814993261241842,
+          "conditional_mean": 0.03369639852001888,
+          "D": -0.047802927604165324,
+          "p_one_sided": 0.3333333333333333,
+          "inferential": false,
+          "conditional_simple_return": 0.03427055298635229,
+          "unconditional_simple_return": 0.08491248648746641
+        }
+      },
+      "hits": [
+        {
+          "start": "2019-03-23",
+          "end": "2019-05-09",
+          "days": 48,
+          "extreme_date": "2018-12-15",
+          "window_complete": true,
+          "days_from_start_to_extreme": -98,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 2.2453036704548595,
+          "fwd365_from_start": 0.46061308972418247,
+          "min_after_start_365d": -0.019053930908789596
+        },
+        {
+          "start": "2020-03-12",
+          "end": "2020-03-30",
+          "days": 19,
+          "extreme_date": "2019-03-13",
+          "window_complete": true,
+          "days_from_start_to_extreme": -365,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 10.903290029029668,
+          "fwd365_from_start": 10.781908958020217,
+          "min_after_start_365d": 0.0
+        },
+        {
+          "start": "2020-07-20",
+          "end": "2020-07-20",
+          "days": 1,
+          "extreme_date": "2020-03-12",
+          "window_complete": true,
+          "days_from_start_to_extreme": -130,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 5.941149759034173,
+          "fwd365_from_start": 2.2524830668973537,
+          "min_after_start_365d": 0.0
+        },
+        {
+          "start": "2020-08-27",
+          "end": "2020-12-24",
+          "days": 120,
+          "extreme_date": "2020-03-12",
+          "window_complete": true,
+          "days_from_start_to_extreme": -168,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 4.6123462717761425,
+          "fwd365_from_start": 3.331624898720748,
+          "min_after_start_365d": -0.10629864272563416
+        },
+        {
+          "start": "2021-01-27",
+          "end": "2021-01-27",
+          "days": 1,
+          "extreme_date": "2020-03-12",
+          "window_complete": true,
+          "days_from_start_to_extreme": -321,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 1.2216776131124507,
+          "fwd365_from_start": 0.2230147994894618,
+          "min_after_start_365d": -0.020092984770348266
+        },
+        {
+          "start": "2021-04-18",
+          "end": "2026-09-24",
+          "days": 1986,
+          "extreme_date": "2020-04-20",
+          "window_complete": false,
+          "days_from_start_to_extreme": -363,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 0.20045398965533345,
+          "fwd365_from_start": -0.2749176757250765,
+          "min_after_start_365d": -0.4705202595638053
+        }
+      ],
+      "hits_above_model": [
+        {
+          "start": "2019-05-10",
+          "end": "2020-09-01",
+          "days": 481,
+          "extreme_date": "2019-06-26",
+          "window_complete": true,
+          "days_from_start_to_extreme": 47,
+          "hit_W3": true,
+          "hit_W30": true,
+          "hit_W90": true,
+          "max_gain_after_start_365d": 1.0380190252777015,
+          "fwd365_from_start": 0.5035471391140662,
+          "min_after_start_365d": -0.23427513818077483
+        },
+        {
+          "start": "2020-12-17",
+          "end": "2021-04-17",
+          "days": 122,
+          "extreme_date": "2021-11-08",
+          "window_complete": true,
+          "days_from_start_to_extreme": 326,
+          "hit_W3": false,
+          "hit_W30": false,
+          "hit_W90": false,
+          "max_gain_after_start_365d": 1.9594944117533672,
+          "fwd365_from_start": 1.0224975554706641,
+          "min_after_start_365d": -0.004252955339588027
+        }
+      ],
+      "strategy": {
+        "name": "ONCHAIN-1 A6: Stock-to-flow (PlanB 2019), implied rule, post-publication",
+        "rubric_version": "1.1",
+        "objective": "beat_benchmark",
+        "benchmark": "market",
+        "grade": "F",
+        "score": 0.167,
+        "caps": [],
+        "sr_annual": 0.814,
+        "excess_sr_annual": -0.526,
+        "excess_return_annual": -0.192,
+        "beats_benchmark": false,
+        "dsr": 0.0816,
+        "n_trials": 1,
+        "pbo": null,
+        "haircut_p": 0.9253,
+        "spa_p": 1.0,
+        "holdout_excess_sr_is": -0.629,
+        "holdout_excess_sr_oos": 0.0,
+        "max_drawdown": 0.7667,
+        "checks": {
+          "dsr": "FAIL",
+          "pbo": "N/A",
+          "haircut": "FAIL",
+          "spa": "FAIL",
+          "holdout": "FAIL",
+          "stability": "FAIL",
+          "costs": "PASS",
+          "surface": "N/A"
+        }
+      },
+      "holm": {
+        "p_entered": 0.9375312343828086,
+        "p_holm": 1.0,
+        "status": "NOT SUPPORTED"
+      },
+      "fit_by_year": {
+        "2019": {
+          "mean_log_error": 0.26216187471812696,
+          "rms_log_error": 0.36601046621614675,
+          "mean_ratio_close_to_model": 1.2997369199490776
+        },
+        "2020": {
+          "mean_log_error": 0.07962676941163396,
+          "rms_log_error": 0.23572797409238047,
+          "mean_ratio_close_to_model": 1.0828828272474598
+        },
+        "2021": {
+          "mean_log_error": -0.2573700225538562,
+          "rms_log_error": 0.444835936959758,
+          "mean_ratio_close_to_model": 0.773082103020899
+        },
+        "2022": {
+          "mean_log_error": -1.017417240168198,
+          "rms_log_error": 1.0743345559872515,
+          "mean_ratio_close_to_model": 0.3615274740372277
+        },
+        "2023": {
+          "mean_log_error": -0.968893347146814,
+          "rms_log_error": 0.9889452605931284,
+          "mean_ratio_close_to_model": 0.3795027836425718
+        },
+        "2024": {
+          "mean_log_error": -0.6385417466279937,
+          "rms_log_error": 0.7313473239571422,
+          "mean_ratio_close_to_model": 0.5280619109154963
+        },
+        "2025": {
+          "mean_log_error": -1.9217839720492378,
+          "rms_log_error": 1.937671465472683,
+          "mean_ratio_close_to_model": 0.14634565256147217
+        },
+        "2026": {
+          "mean_log_error": -2.444121770944642,
+          "rms_log_error": 2.447402400545117,
+          "mean_ratio_close_to_model": 0.0868023337683925
+        }
+      },
+      "share_within_factor_2": 0.4863288370397375,
+      "model_price_on": {
+        "2019-03-22": 6010.632873916207,
+        "2021-12-31": 74032.32715377412,
+        "2024-12-31": 326746.9644262899,
+        "2026-09-24": 862472.4275705576
+      },
+      "sf_on": {
+        "2019-03-22": 26.26316083916084,
+        "2021-12-31": 57.445981854762174,
+        "2024-12-31": 91.34524410107096,
+        "2026-09-24": 123.1130496399571
+      }
+    }
+  }
+}

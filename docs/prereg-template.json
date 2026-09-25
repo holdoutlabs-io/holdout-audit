@@ -1,0 +1,16 @@
+{
+  "strategy_name": "REPLACE: short name",
+  "rules": "REPLACE: complete, unambiguous rules. Signal timing, entry, exit, sizing, instruments, what happens on missing data.",
+  "parameters": {"example_lookback": 50},
+  "instruments": ["REPLACE"],
+  "forward_start": "2026-10-01",
+  "forward_end": "2026-12-31",
+  "primary_metric": "annualised Sharpe ratio of daily net returns over the forward window",
+  "pass_criteria": "REPLACE: e.g. forward Sharpe > 0 AND max drawdown < 15% AND at least 20 trades; all three must hold",
+  "secondary_metrics": ["max drawdown", "hit rate", "turnover"],
+  "cost_model": "REPLACE: e.g. 2 bps per unit traded, one way",
+  "data_source": "REPLACE: where forward returns will come from (broker statements, exchange data)",
+  "variants_tried_before_sealing": 0,
+  "analysis_plan": "Scored with holdout-audit at the end of the window; no parameter may change during the trial; any change starts a new sealed trial.",
+  "client_reference": "REPLACE: an opaque reference, not a name"
+}

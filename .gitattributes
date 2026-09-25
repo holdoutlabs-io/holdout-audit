@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.pem binary
+*.crt binary
+*.tsr binary
+*.tsq binary
+/research/leverage-risk/lock/** -text

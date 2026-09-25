@@ -1,0 +1,25 @@
+Holdout Labs - holdout-audit
+Copyright 2026 Holdout Labs
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Attribution
+-----------
+The RFC 3161 sealing flow in src/holdout_audit/seal.py (query with nonce via
+`openssl ts -query -cert`, POST to DigiCert and FreeTSA, double verification of each
+reply against the imprint and the query file with pinned CA files, reply-time parsing,
+and "a TSA outage is a failed receipt, never a crash") is adapted from a timestamp
+client in the maintainers' earlier private research code (2026). It was rewritten for
+this package; no code is imported from that code base.
+
+Third-party certificates
+------------------------
+src/holdout_audit/certs/ contains public CA/TSA certificates downloaded from their
+issuers, used only to verify timestamp tokens:
+  - DigiCert Trusted Root G4       https://cacerts.digicert.com/DigiCertTrustedRootG4.crt.pem
+  - FreeTSA root CA and TSA cert   https://freetsa.org/files/cacert.pem, https://freetsa.org/files/tsa.crt
+
+Statistical methods
+-------------------
+The statistics implement published methods; each module cites its source papers
+(see docs/METHODS.md). No third-party code from those papers is included.

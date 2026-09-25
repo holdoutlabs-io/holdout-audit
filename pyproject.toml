@@ -1,0 +1,52 @@
+[project]
+name = "holdout-audit"
+version = "0.4.0"
+description = "Scientific audits for trading strategies: deflated Sharpe, PBO via CSCV, multiple-testing haircuts, bootstrap reality checks and sealed forward trials."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.11"
+authors = [{ name = "Holdout Labs", email = "hello@holdoutlabs.io" }]
+keywords = ["backtest", "overfitting", "deflated sharpe ratio", "probability of backtest overfitting", "cscv",
+            "multiple testing", "reality check", "spa test", "rfc 3161", "preregistration"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scipy>=1.11",
+]
+
+[project.urls]
+Homepage = "https://holdoutlabs.io"
+Source = "https://github.com/holdoutlabs-io/holdout-audit"
+Methods = "https://github.com/holdoutlabs-io/holdout-audit/blob/main/docs/METHODS.md"
+
+[project.scripts]
+holdout-audit = "holdout_audit.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/holdout_audit"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src/holdout_audit", "/docs", "/README.md", "/LICENSE", "/NOTICE", "/pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

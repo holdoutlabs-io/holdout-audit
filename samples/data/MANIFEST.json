@@ -1,0 +1,177 @@
+{
+  "btc_daily.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T13:42:45Z",
+    "rows": 4085,
+    "sha256": "064d2d183581eebe94c24ab3e69e318c369068c03adfe61bac39528f6a2d5c17",
+    "source": "Coinbase Exchange public candles API"
+  },
+  "btc_ohlc_daily.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T15:34:16Z",
+    "rows": 4085,
+    "sha256": "59824cab0b610717f0ea82fdb748df98d81849aeaaac3fe62452a3d8043ac775",
+    "source": "Coinbase Exchange public candles API (OHLC)"
+  },
+  "spy_daily_yahoo.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T13:42:34Z",
+    "rows": 8471,
+    "sha256": "bd317200c5b31a55efe40c6982665e9f45be1904afe3c398c797bd30947cda77",
+    "source": "Yahoo Finance chart endpoint"
+  },
+  "spy_ohlc_daily_yahoo.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T18:23:35Z",
+    "rows": 8471,
+    "sha256": "f05d93e20e2ad5f36cf078de7ecabcaa613a3cb8f6a9ddbb2d19f0db44ed3867",
+    "source": "Yahoo Finance chart endpoint (OHLC)"
+  },
+  "yahoo_agg.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:47Z",
+    "rows": 5784,
+    "sha256": "a3b38561662963ae684a33d4b7b59ec31b4cd59c7eeb964c6c5ac7d181810cb4",
+    "source": "Yahoo Finance chart endpoint (AGG)"
+  },
+  "yahoo_eem.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:42:01Z",
+    "rows": 5900,
+    "sha256": "ef60cb9acb5fcb2801a3e1576cf3d4d74eeae1d2fc6e21efeb08b44e5c1118b8",
+    "source": "Yahoo Finance chart endpoint (EEM)"
+  },
+  "yahoo_efa.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:45Z",
+    "rows": 6306,
+    "sha256": "259e2b5afa686d8fd0605dc472b7e84f8c94a5f9b7cc95e54c8433e9f001e75f",
+    "source": "Yahoo Finance chart endpoint (EFA)"
+  },
+  "yahoo_idx_vix.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:48Z",
+    "rows": 9252,
+    "sha256": "3cd3886a2f45d9e13dfcd598571fab13e353ff526dfa24adc277b1541ab19b7c",
+    "source": "Yahoo Finance chart endpoint (^VIX)"
+  },
+  "yahoo_ief.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:46Z",
+    "rows": 6078,
+    "sha256": "c80eb1f9e013d37ab945b6c150cfbfee0dc3c6eec9a1c6463587fc58d771ecce",
+    "source": "Yahoo Finance chart endpoint (IEF)"
+  },
+  "yahoo_iwm.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:44Z",
+    "rows": 6621,
+    "sha256": "54be8cdbaa2e97b782ef379f0fec2f626367f772a82fe64a08b628a6f6eab5c5",
+    "source": "Yahoo Finance chart endpoint (IWM)"
+  },
+  "yahoo_qqq.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:43Z",
+    "rows": 6929,
+    "sha256": "f141ccf98e0f0382402a034e1f3211608c87fa36600f0a3caead7e20ee510847",
+    "source": "Yahoo Finance chart endpoint (QQQ)"
+  },
+  "yahoo_splv.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:42:05Z",
+    "rows": 3870,
+    "sha256": "4c429350321c7daaa70a5ec12e1bf826ee6c38789c9ed62e3cb25da80306cad6",
+    "source": "Yahoo Finance chart endpoint (SPLV)"
+  },
+  "yahoo_spy.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:42Z",
+    "rows": 8471,
+    "sha256": "8f10432b608927a6a88b67e6e98d72153ba70eb0254c2b5dce1fe3548fb3ceec",
+    "source": "Yahoo Finance chart endpoint (SPY)"
+  },
+  "yahoo_tlt.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:42:02Z",
+    "rows": 6078,
+    "sha256": "9e3ba9c9ac9caa8aa53096e89de089bafb91734efe725d1ef22502764afced84",
+    "source": "Yahoo Finance chart endpoint (TLT)"
+  },
+  "yahoo_usmv.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:42:04Z",
+    "rows": 3753,
+    "sha256": "fad745174f0401e0ce1435094d53530f3d9ded45b6fd71a7736ab95f15a7d837",
+    "source": "Yahoo Finance chart endpoint (USMV)"
+  },
+  "yahoo_vnq.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:42:03Z",
+    "rows": 5532,
+    "sha256": "8bc567ef38c35aa59aacd9d40c713590455970c2ac58faff9da458728d8dd3ac",
+    "source": "Yahoo Finance chart endpoint (VNQ)"
+  },
+  "yahoo_xlb.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:48Z",
+    "rows": 6981,
+    "sha256": "722cb8bb69953816b2323071f7759a6f914a686d1b9e7da34b9e24e51cb80d9a",
+    "source": "Yahoo Finance chart endpoint (XLB)"
+  },
+  "yahoo_xle.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:49Z",
+    "rows": 6981,
+    "sha256": "6ccc223ccaf10ad125da1781752055f0470ff2705416865ec8e88b06e9ebcb12",
+    "source": "Yahoo Finance chart endpoint (XLE)"
+  },
+  "yahoo_xlf.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:50Z",
+    "rows": 6981,
+    "sha256": "eb9cb569ccb0ceda593be91e3ecb045cc0a008e654aa26281a778f13367f433d",
+    "source": "Yahoo Finance chart endpoint (XLF)"
+  },
+  "yahoo_xli.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:51Z",
+    "rows": 6981,
+    "sha256": "3016cd9968910b3287f73924628fa9d566478a0363fb1d9ddb5a05d975d13e86",
+    "source": "Yahoo Finance chart endpoint (XLI)"
+  },
+  "yahoo_xlk.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:52Z",
+    "rows": 6981,
+    "sha256": "dd9d8889f4b5c7b0072326a4f003a6018a1124c67398d317bf47d9a7badabfa5",
+    "source": "Yahoo Finance chart endpoint (XLK)"
+  },
+  "yahoo_xlp.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:53Z",
+    "rows": 6981,
+    "sha256": "dbb4c43329c9c5826195d0e467123bbba723075db63ff09c3920f66611bb3412",
+    "source": "Yahoo Finance chart endpoint (XLP)"
+  },
+  "yahoo_xlu.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:54Z",
+    "rows": 6981,
+    "sha256": "79fa525b66aa5292c217a98d242faa1a97801b0da6a261f2c5b76b731ea83ce6",
+    "source": "Yahoo Finance chart endpoint (XLU)"
+  },
+  "yahoo_xlv.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:55Z",
+    "rows": 6981,
+    "sha256": "6debedf2e83df2875d445167466c77d21c3dec02787611a33cbd50a195b2229f",
+    "source": "Yahoo Finance chart endpoint (XLV)"
+  },
+  "yahoo_xly.csv": {
+    "end": "2026-09-24",
+    "recorded_utc": "2026-09-25T20:12:56Z",
+    "rows": 6981,
+    "sha256": "c81319403d30a30bb6c1fa9db9ffabb6861cf3d5246813a47c3908b7b479f83e",
+    "source": "Yahoo Finance chart endpoint (XLY)"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "objective": "beat_benchmark",
+  "max_return_shortfall_annual": null,
+  "benchmark": "buy-and-hold BTC-USD (Coinbase daily close, close to close)",
+  "declared_at_utc": "2026-09-25T15:33:10Z",
+  "declared_by": "holdout-labs-sample-04",
+  "notes": "Objective (a) of rubric v1.1, declared and sealed before the BTC OHLC data for this audit were fetched and before any Supertrend result was computed. We will not grade this sample under any other objective."
+}
