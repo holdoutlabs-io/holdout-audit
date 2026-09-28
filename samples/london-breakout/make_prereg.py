@@ -1,0 +1,145 @@
+"""London Breakout audit (LB-1): writes preregistration.json and declaration.json, prints their SHA-256.
+
+Run BEFORE sealing PREREG.md and before any GBP/USD price is loaded. Re-run at sealing time (the
+timestamps change), paste the printed hashes into PREREG.md §11, then seal PREREG.md with
+``holdout-audit seal-doc samples/london-breakout/PREREG.md --out-dir samples/london-breakout/prereg-seal``.
+"""
+
+from __future__ import annotations
+
+import datetime as dt
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import lb_port  # noqa: E402
+
+NOW = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+PREREG = {
+    "id": "LB-1",
+    "title": "London Breakout (je-suis-tm/quant-trading), tested as written on GBP/USD",
+    "status": "DRAFT, NOT SEALED: awaiting owner approval",
+    "written_at_utc": NOW,
+    "governing_document": "PREREG.md (to be sealed); this JSON is its machine-readable companion and is hashed inside it",
+    "public_commitment": {
+        "thread": "https://x.com/RHerman/status/2104453599917199646",
+        "our_reply": "https://x.com/rv_holdoutlabs/status/2104540769486791143",
+        "text": "We'll take the London Breakout from the repo as written, seal the rules and settings before touching "
+                "any data, and publish the full result here whatever it shows. Will post the sealed plan first.",
+        "date": "2026-09-28",
+    },
+    "strategy_source": {
+        "repo": "https://github.com/je-suis-tm/quant-trading",
+        "commit": "611b73f2c3f577ac5b28aaa19ac8c43d3236c7a5",
+        "file": "London Breakout backtest.py",
+        "file_sha256": "8b5a0f672c2c5a44fb5a72564fcb0b20a5bd2b0d3d9da3e2f4a52b2d047f8e3a",
+        "file_last_changed": "82e748f530e2233e4bb21a7943698df79f1086f0 (2019-03-13)",
+        "first_commit_under_this_name": "b6c046e7ececb21ca3caea787cdaafd231f5063d (2018-04-17)",
+        "licence": "Apache-2.0",
+        "lines_executed": "51-211 (london_breakout, signal_generation)",
+    },
+    "claim_tested": "As coded, with its default settings, the London Breakout earns a positive risk-adjusted return "
+                    "on GBP/USD net of realistic trading costs.",
+    "instrument": "GBP/USD spot (the repo's own data file is gbpusd.csv)",
+    "rules_as_coded": {
+        "clock": "the data's own timestamps, HistData fixed UTC-5 (EST without DST), as the code's comments assume",
+        "range": "all bar prices with hour == 2 (02:00-02:59 UTC-5 = 07:00-07:59 UTC); upper = max, lower = min",
+        "threshold_bar": "hour == 3 and minute == 0 sets upper/lower and clears the range list; no entry test on this bar",
+        "entry_window": "hour == 3 and 1 <= minute < open_minutes (default 30)",
+        "long": "price - upper > 0; ignored if price - upper > risky_stop (false alarm) or if already long",
+        "short": "price - lower < 0; ignored if lower - price > risky_stop or if already short",
+        "stop_and_target": "outside the entry window and outside hour 2 / hour 12: exit when price > executed + "
+                           "risky_stop/2 or price < executed - risky_stop/2 (50 pips each way by default)",
+        "flatten": "every bar with hour == 12 (12:00 UTC-5 = 17:00 UTC) sets the signal to minus the open position",
+        "defaults": {"risky_stop": 0.01, "open_minutes": 30},
+    },
+    "interpretations": "PREREG.md §3.3 (A1-A15); the port reproduces the original's behaviour in each case except A11 "
+                       "(empty range: the original crashes; the port takes no trade that day)",
+    "grid": {
+        "risky_stop": list(lb_port.GRID_RISKY_STOP),
+        "open_minutes": list(lb_port.GRID_OPEN_MINUTES),
+        "n_variants": lb_port.N_VARIANTS,
+        "labels": [p.label for p in lb_port.GRID],
+        "audited_variant": lb_port.DEFAULT.label,
+        "note": "N = 15 is the declared number of trials for DSR, PBO, SPA and the haircut. Sensitivities in §6.4 "
+                "are of the default only and are not selection candidates.",
+    },
+    "data": {
+        "source": "HistData.com, GBPUSD, Generic ASCII, 1-minute bars (bid OHLC), fixed UTC-5",
+        "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd",
+        "price_field": "bar CLOSE bid",
+        "sample": "first available bar (HistData lists GBPUSD M1 from 2000) to 2026-09-25 23:59 UTC-5",
+        "in_sample": "first available bar to 2023-12-31 (annual files 2000-2023)",
+        "holdout": "2024-01-01 to 2026-09-25 (annual files 2024, 2025 and monthly files 2026-01..09); LOCKED until "
+                   "Stage A results are committed and hashed in HOLDOUT-UNLOCK.json",
+        "hashing": "SHA-256 of every downloaded zip and extracted CSV (MANIFEST.json, committed before each stage "
+                   "runs) plus a canonical panel hash of the parsed series (lb_data.panel_sha256)",
+        "redistribution": "raw files are never committed or published; only derived statistics and hashes",
+    },
+    "execution": {
+        "fill": "at the signal bar's price (as written: executed_price = price[i]; the author's Heikin-Ashi portfolio "
+                "also fills at the signal bar's close)",
+        "size": "one unit of GBP notional per signal unit; no leverage, no compounding",
+        "returns": "daily P&L / fill price of the latest entry, summed over the day's bars; weekdays with >= 1 bar; "
+                   "no-trade days are 0",
+        "periods_per_year": 260,
+        "financing": "none: positions are flat by 17:00 UTC, before the New York 17:00 rollover",
+    },
+    "costs": {
+        "unit": "pips per unit traded, one way (entry, exit and each unit of a flip)",
+        "base": 1.0, "low_sensitivity": 0.5, "high_sensitivity": 2.0,
+        "base_rationale": "round trip 2.0 pips = 1.0 pip spread (bid series, so the full spread is paid once per "
+                          "round trip) + 0.5 pip slippage on each fill",
+        "sources": ["CMC Markets, 'What is a good forex spread?' (GBP/USD typically 0.5-3.0 pips; spreads widen in "
+                    "the early European morning), https://www.cmcmarkets.com/en-gb/forex/what-is-a-good-forex-spread"],
+    },
+    "benchmark": "zero (cash): a self-financing intraday long/short spot position has no carry; see PREREG §4.4",
+    "rubric": "Holdout Labs Fragility Rubric v1.2 (docs/RUBRIC-v1.2.md, SHA-256 "
+              "81bc60b5bf4520fdfb91c43b37883c30a9a2061903442d1e8a8b05f3d37a71fc), holdout-audit 0.4.x, objective (a) "
+              "beat the benchmark with benchmark = zero",
+    "settings": {"bootstrap_draws": 1000, "seed": 20260925, "cscv_blocks": 16, "base_cost_bps_in_rubric": 0.0,
+                 "rubric_returns": "net of the pip cost model; turnover supplied; market = GBP/USD close-to-close "
+                                   "(volatility regimes only)"},
+    "inference": {
+        "P1": "Stage A (in-sample): 1 - DSR of the default at N = 15 (rubric 'dsr' check)",
+        "P2": "Stage B (holdout): one-sided P(Z >= annualised Sharpe x sqrt(years)) of the default's net daily returns",
+        "multiplicity": "Holm across {P1, P2}, family-wise alpha 0.05",
+        "wording": [
+            "SUPPORTED: both Holm-adjusted p <= 0.05",
+            "WENT THE OTHER WAY: otherwise, if the full-sample mean net return <= 0",
+            "IN-SAMPLE ONLY: otherwise, if P1 adjusted <= 0.05",
+            "HOLDOUT ONLY: otherwise, if P2 adjusted <= 0.05",
+            "NOT SHOWN: otherwise",
+        ],
+        "grade": "rubric v1.2 letter from the full-sample run with the holdout split at 2024-01-01, reported always",
+    },
+    "publication_commitment": "Publish the full report whatever it shows, at samples/london-breakout/ and on "
+                              "holdoutlabs.io, and post the result as a reply in the X thread above. No re-runs with "
+                              "other settings; every deviation dated and listed before results are published.",
+    "scope": "Statistical analysis of past data only; not investment advice (docs/SCOPE-POLICY.md).",
+}
+
+DECLARATION = {
+    "objective": "beat_benchmark",
+    "max_return_shortfall_annual": None,
+    "benchmark": "zero (cash, no interest)",
+    "declared_at_utc": NOW,
+    "declared_by": "holdout-labs-lb-1",
+    "source_claim": "README, je-suis-tm/quant-trading: London Breakout 'is a fascinating information arbitrage across "
+                    "different markets in different time zones'; tested claim: positive risk-adjusted return net of costs.",
+}
+
+
+def main() -> None:
+    for name, obj in (("preregistration.json", PREREG), ("declaration.json", DECLARATION)):
+        path = HERE / name
+        path.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+        print(f"{name}  {hashlib.sha256(path.read_bytes()).hexdigest()}")
+
+
+if __name__ == "__main__":
+    main()

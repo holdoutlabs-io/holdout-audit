@@ -1,0 +1,8 @@
+{
+  "objective": "beat_benchmark",
+  "max_return_shortfall_annual": null,
+  "benchmark": "zero (cash, no interest)",
+  "declared_at_utc": "2026-09-28T13:22:27Z",
+  "declared_by": "holdout-labs-lb-1",
+  "source_claim": "README, je-suis-tm/quant-trading: London Breakout 'is a fascinating information arbitrage across different markets in different time zones'; tested claim: positive risk-adjusted return net of costs."
+}

@@ -4,3 +4,4 @@
 *.tsr binary
 *.tsq binary
 /research/leverage-risk/lock/** -text
+/samples/london-breakout/** -text
