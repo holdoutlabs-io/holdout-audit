@@ -68,6 +68,18 @@ jobs:
           [[ "$GRADE" =~ ^[A-F]$ ]]
           [ -n "$DSR" ] && [ -n "$PBO" ]
           grep -q "holdout grade" badges/holdout-grade.svg
+      - id: strict
+        name: fail-below fails the job when the grade is worse
+        continue-on-error: true
+        uses: ./
+        with:
+          returns: examples/github-action/returns.csv
+          n-trials: "9"
+          fail-below: A
+          comment: "false"
+      - name: Check that the strict run failed on the grade
+        shell: bash
+        run: '[ "${{ steps.strict.outcome }}" = failure ] && [ -n "${{ steps.strict.outputs.grade }}" ]'
       - uses: actions/upload-artifact@v7
         if: matrix.os == 'ubuntu-latest'
         with:

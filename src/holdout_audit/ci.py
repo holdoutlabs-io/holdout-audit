@@ -219,10 +219,10 @@ def run_ci(a) -> int:
                 f.write(f"{k}={v}\n")
     if a.summary_out:
         Path(a.summary_out).parent.mkdir(parents=True, exist_ok=True)
-        Path(a.summary_out).write_text(md, encoding="utf-8")
+        Path(a.summary_out).write_text(md, encoding="utf-8", newline="\n")
     if a.badge:
         Path(a.badge).parent.mkdir(parents=True, exist_ok=True)
-        Path(a.badge).write_text(badge_svg(res.grade.letter), encoding="utf-8")
+        Path(a.badge).write_text(badge_svg(res.grade.letter), encoding="utf-8", newline="\n")
         print(f"badge: {a.badge}")
     if a.report:
         from holdout_audit.report import write_report
