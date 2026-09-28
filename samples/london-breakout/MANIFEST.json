@@ -1,0 +1,1199 @@
+{
+  "study": "LB-1 London Breakout",
+  "source": "HistData.com GBPUSD Generic ASCII M1 (bid), fixed UTC-5",
+  "fetcher": "fetch_histdata.py",
+  "note": "raw files are never committed or published (PREREG \u00a75.1)",
+  "files": [
+    {
+      "period": "2000",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2000",
+      "form": {
+        "date": "2000",
+        "datemonth": "2000",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:28:38Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12000.zip",
+      "zip_bytes": 1242567,
+      "zip_sha256": "1e7fd98e12ab2f36b890ae8eaf007d3d8149905cb225d4ac70b40e6463984f9d",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2000.csv",
+          "bytes": 7142418,
+          "sha256": "cff6fc6abcf7f62d15a5a2b147cdfafcb83c9078d8dec5e6dc7db4b7c07ac210"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2000.txt",
+          "bytes": 2493112,
+          "sha256": "1181f9c4fdc7b8a8b94ae9880cf6c708b70a4a1dba7fe145f18d41a371fb6394"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12000.status.txt",
+        "bytes": 2493112,
+        "sha256": "1181f9c4fdc7b8a8b94ae9880cf6c708b70a4a1dba7fe145f18d41a371fb6394",
+        "downloaded_at_utc": "2026-09-28T13:28:44Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2001",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2001",
+      "form": {
+        "date": "2001",
+        "datemonth": "2001",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:28:59Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12001.zip",
+      "zip_bytes": 1902812,
+      "zip_sha256": "b950881dc4f597948e077c835fdc76a4e866cf5a14cac90edf5575e9c9768b88",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2001.csv",
+          "bytes": 10964052,
+          "sha256": "58383e8f40f7db726a7c9c18a18f6bb9ca7199dd6177f639cada3f41c461ef1f"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2001.txt",
+          "bytes": 3836630,
+          "sha256": "78389f518a79a56a43d89d3de8c598f576b876281963797747e8b3d72061a830"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12001.status.txt",
+        "bytes": 3836630,
+        "sha256": "78389f518a79a56a43d89d3de8c598f576b876281963797747e8b3d72061a830",
+        "downloaded_at_utc": "2026-09-28T13:29:04Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2002",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2002",
+      "form": {
+        "date": "2002",
+        "datemonth": "2002",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:29:15Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12002.zip",
+      "zip_bytes": 1719684,
+      "zip_sha256": "9b09153d3f13075326b1426802a3a4abb1e5b353e475d4c9cae9abf87afbc22f",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2002.csv",
+          "bytes": 10513854,
+          "sha256": "485c534e10c21c8b839471a25caed50148ff85eac38f47c70aaa1fc2f30bafbc"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2002.txt",
+          "bytes": 3100470,
+          "sha256": "feecb30368211f0afb84af79e173c09014e366c856dd43bdde045cccde4adda4"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12002.status.txt",
+        "bytes": 3100470,
+        "sha256": "feecb30368211f0afb84af79e173c09014e366c856dd43bdde045cccde4adda4",
+        "downloaded_at_utc": "2026-09-28T13:29:23Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2003",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2003",
+      "form": {
+        "date": "2003",
+        "datemonth": "2003",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:29:36Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12003.zip",
+      "zip_bytes": 2265821,
+      "zip_sha256": "b7134671b7035e7337d5e54a42cfdc7ddb379a93dd9d99c4aee58bfa4b85f72f",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2003.csv",
+          "bytes": 16006572,
+          "sha256": "b5dae6cf8b4a3f73e0f6d585276318b99c2dcae9d79832dfe120d871cea179f8"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2003.txt",
+          "bytes": 2329918,
+          "sha256": "9c29a9e42ccafd08098d5a2d3d272f0cbd7341a9c1579f13d947827c91546b9f"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12003.status.txt",
+        "bytes": 2329918,
+        "sha256": "9c29a9e42ccafd08098d5a2d3d272f0cbd7341a9c1579f13d947827c91546b9f",
+        "downloaded_at_utc": "2026-09-28T13:29:42Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2004",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2004",
+      "form": {
+        "date": "2004",
+        "datemonth": "2004",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:29:54Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12004.zip",
+      "zip_bytes": 2513563,
+      "zip_sha256": "23b350f903c990520307de5eb7c512cfafc0e7219e2769de381935405039e561",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2004.csv",
+          "bytes": 17142632,
+          "sha256": "ba759d2ac2e179f512a0bd5bb52468f79f77d20fc1f1fe5ec9cec1950306d79d"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2004.txt",
+          "bytes": 2448376,
+          "sha256": "a14b907ac012aae754786c538f9251fd4a543430b3c18ae393b3dffc007ed66e"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12004.status.txt",
+        "bytes": 2448376,
+        "sha256": "a14b907ac012aae754786c538f9251fd4a543430b3c18ae393b3dffc007ed66e",
+        "downloaded_at_utc": "2026-09-28T13:30:01Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2005",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2005",
+      "form": {
+        "date": "2005",
+        "datemonth": "2005",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:30:13Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12005.zip",
+      "zip_bytes": 2493064,
+      "zip_sha256": "f0ffd0af2b8560412e0d0dec0ba7ee98371d6558d0d2fcf8e688932cdbd2ced2",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2005.csv",
+          "bytes": 16809444,
+          "sha256": "2f53bdb30974a3ec984da3a0fcff328a73a76023527267c01659163f5846c6f5"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2005.txt",
+          "bytes": 2761315,
+          "sha256": "ab317f1ec715b8b88044f5d45040c47ae26720f87ce7533f3ea0ea91b5ee7044"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12005.status.txt",
+        "bytes": 2761315,
+        "sha256": "ab317f1ec715b8b88044f5d45040c47ae26720f87ce7533f3ea0ea91b5ee7044",
+        "downloaded_at_utc": "2026-09-28T13:30:20Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2006",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2006",
+      "form": {
+        "date": "2006",
+        "datemonth": "2006",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:30:31Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12006.zip",
+      "zip_bytes": 2480966,
+      "zip_sha256": "9174576633a332e4c446ce2606b55cde971ccfc8a3a9d00cca3c0eced1fefd1a",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2006.csv",
+          "bytes": 16681086,
+          "sha256": "6887985a46556fb79d9ab3c936095fe166da260c5dbb25106488712c2848c8dd"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2006.txt",
+          "bytes": 3017494,
+          "sha256": "da3d8f3831e820ff4720dadf607e8143fee992a2c2a80f4b4f6213cad3e69b30"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12006.status.txt",
+        "bytes": 3017494,
+        "sha256": "da3d8f3831e820ff4720dadf607e8143fee992a2c2a80f4b4f6213cad3e69b30",
+        "downloaded_at_utc": "2026-09-28T13:30:40Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2007",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2007",
+      "form": {
+        "date": "2007",
+        "datemonth": "2007",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:30:53Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12007.zip",
+      "zip_bytes": 2483739,
+      "zip_sha256": "a75ac478da5dd6afc18e3785cc262f4a2cbd429f8fd039b86aa4da98616fdb88",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2007.csv",
+          "bytes": 16564500,
+          "sha256": "42f1645498094649e721b8075aa78e82db78c76b7131f322d188eefb980fec3e"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2007.txt",
+          "bytes": 3146971,
+          "sha256": "22a3a76609803b86357ef962a13f5f45fe92709c09cf28c6056861ed03be6762"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12007.status.txt",
+        "bytes": 3146971,
+        "sha256": "22a3a76609803b86357ef962a13f5f45fe92709c09cf28c6056861ed03be6762",
+        "downloaded_at_utc": "2026-09-28T13:31:00Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2008",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2008",
+      "form": {
+        "date": "2008",
+        "datemonth": "2008",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:31:12Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12008.zip",
+      "zip_bytes": 2705792,
+      "zip_sha256": "e1a66e79d6100d0eb5275d363da54a569e83508d963f519355cf78ad35812200",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2008.csv",
+          "bytes": 17937018,
+          "sha256": "ce7f1e60fdd5ad51357de44e3486fc8b700e041aab500767ab95a2e210583d39"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2008.txt",
+          "bytes": 2160661,
+          "sha256": "befa41b6fd092e9fb549aa2c575d356766b84ad1b320cf23ce76b1e223c168b5"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12008.status.txt",
+        "bytes": 2160661,
+        "sha256": "befa41b6fd092e9fb549aa2c575d356766b84ad1b320cf23ce76b1e223c168b5",
+        "downloaded_at_utc": "2026-09-28T13:31:18Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2009",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2009",
+      "form": {
+        "date": "2009",
+        "datemonth": "2009",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:31:30Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12009.zip",
+      "zip_bytes": 2719624,
+      "zip_sha256": "56a9a55df0594accc9d309a5f07c595a64647ba52a0126eb90ee8678bed3855c",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2009.csv",
+          "bytes": 19125612,
+          "sha256": "c83b305a4d8995607fa0e76e4ed8d8f24fff4d8c98205bd8595d37b1ccd1dc2d"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2009.txt",
+          "bytes": 1249357,
+          "sha256": "32d358b5407d28e9a55090da7585a0bdd1160122598b0e21ecf72b3ed272cfd7"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12009.status.txt",
+        "bytes": 1249357,
+        "sha256": "32d358b5407d28e9a55090da7585a0bdd1160122598b0e21ecf72b3ed272cfd7",
+        "downloaded_at_utc": "2026-09-28T13:31:36Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2010",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2010",
+      "form": {
+        "date": "2010",
+        "datemonth": "2010",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:31:48Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12010.zip",
+      "zip_bytes": 2619039,
+      "zip_sha256": "f30e5e74ef66f429fe974ee5c1d2035757744559407e49a8ece0e4769135d7f1",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2010.csv",
+          "bytes": 18827802,
+          "sha256": "d260f21b93af269bbbbc7e6386ce04d2e733875d3e6895094ff0d317712268b0"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2010.txt",
+          "bytes": 1619186,
+          "sha256": "5e15788c62dfab6e082c3dfc2b7afec5a7a29d52251ba928ccc5760468c21e04"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12010.status.txt",
+        "bytes": 1619186,
+        "sha256": "5e15788c62dfab6e082c3dfc2b7afec5a7a29d52251ba928ccc5760468c21e04",
+        "downloaded_at_utc": "2026-09-28T13:31:54Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2011",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2011",
+      "form": {
+        "date": "2011",
+        "datemonth": "2011",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:32:06Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12011.zip",
+      "zip_bytes": 2661811,
+      "zip_sha256": "4ac875f049bdcf849997af4977f993d66081a9b88073b991599a1928f7b7b06b",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2011.csv",
+          "bytes": 18863442,
+          "sha256": "1b9e9d4bbf28182099236c943ca69988f2638739a97260f06661a18020c5d0b8"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2011.txt",
+          "bytes": 1674956,
+          "sha256": "9b192f2a9b2693f5621531c67848048ec69c2a0275b22b354bd1622fc9f280cd"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12011.status.txt",
+        "bytes": 1674956,
+        "sha256": "9b192f2a9b2693f5621531c67848048ec69c2a0275b22b354bd1622fc9f280cd",
+        "downloaded_at_utc": "2026-09-28T13:32:12Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2012",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2012",
+      "form": {
+        "date": "2012",
+        "datemonth": "2012",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:32:28Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12012.zip",
+      "zip_bytes": 3501105,
+      "zip_sha256": "83a04818d50ce20b149f6ba7e70973cebe9dca77afeb291cf0cf369f67a551bb",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2012.csv",
+          "bytes": 20076984,
+          "sha256": "17b681a867d842be65eeb50aa12a4bb1c175c8652b41bc6448a3827d1a9fe25c"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2012.txt",
+          "bytes": 145535,
+          "sha256": "52b856d6bcf409114b1ce97e1a44019b02f50840729992d31f8101f6f1f23fb2"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12012.status.txt",
+        "bytes": 145535,
+        "sha256": "52b856d6bcf409114b1ce97e1a44019b02f50840729992d31f8101f6f1f23fb2",
+        "downloaded_at_utc": "2026-09-28T13:32:33Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2013",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2013",
+      "form": {
+        "date": "2013",
+        "datemonth": "2013",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:32:47Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12013.zip",
+      "zip_bytes": 3489013,
+      "zip_sha256": "85bf830f3418e2b8fa521126894ba5510a033826aaeadd57eec3c13f9b7893eb",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2013.csv",
+          "bytes": 20021148,
+          "sha256": "060fb998bd4cd5a9af97cab50d6b861a8ac331b9e3140d56d651ebb7189e4bd3"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2013.txt",
+          "bytes": 120785,
+          "sha256": "d55a2e7ba5b81e079530559c0c32f2415cf5c50cd4915cc4fc39fd9dc0899d24"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12013.status.txt",
+        "bytes": 120785,
+        "sha256": "d55a2e7ba5b81e079530559c0c32f2415cf5c50cd4915cc4fc39fd9dc0899d24",
+        "downloaded_at_utc": "2026-09-28T13:32:52Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2014",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2014",
+      "form": {
+        "date": "2014",
+        "datemonth": "2014",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:35:14Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12014.zip",
+      "zip_bytes": 3357884,
+      "zip_sha256": "72b956ebd8acbcc1aaffc59fd0d39d0cf2a7f33bb4fa3a17d8c72faa8f41724b",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2014.csv",
+          "bytes": 19921464,
+          "sha256": "1eebe9a2e219a72cbb36e76c5a8ca63fb4d74856ffb832517c578f2dcc1050c7"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2014.txt",
+          "bytes": 304153,
+          "sha256": "c492732785f3bd0244e6917c6e98f1f44fa502f94afd894fd880fb2bc14a7d11"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12014.status.txt",
+        "bytes": 304153,
+        "sha256": "c492732785f3bd0244e6917c6e98f1f44fa502f94afd894fd880fb2bc14a7d11",
+        "downloaded_at_utc": "2026-09-28T13:35:19Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2015",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2015",
+      "form": {
+        "date": "2015",
+        "datemonth": "2015",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:35:32Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12015.zip",
+      "zip_bytes": 3535353,
+      "zip_sha256": "531514f5b3100be28d740b95ccf97662f6dcba3c6941cc465ac473b869b302eb",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2015.csv",
+          "bytes": 20100474,
+          "sha256": "65afa3b15f72828157685a37521856dab0474d56f14d2816a3affa80effd2888"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2015.txt",
+          "bytes": 64824,
+          "sha256": "e9f408f732413f578a954f36a1bc62da6d8350cbca8f390d804bd34fcdbcf21d"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12015.status.txt",
+        "bytes": 64824,
+        "sha256": "e9f408f732413f578a954f36a1bc62da6d8350cbca8f390d804bd34fcdbcf21d",
+        "downloaded_at_utc": "2026-09-28T13:35:37Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2016",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2016",
+      "form": {
+        "date": "2016",
+        "datemonth": "2016",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:35:49Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12016.zip",
+      "zip_bytes": 3627916,
+      "zip_sha256": "39acbc0146e6ce82fc5327c56225623a0507e279534b8f2906dff19725c65838",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2016.csv",
+          "bytes": 20113920,
+          "sha256": "5f29a0e2a8e24a720fa1d7d44c605605182eeaf685d2994e6bc0f7f655e80a28"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2016.txt",
+          "bytes": 109127,
+          "sha256": "d6b0c92dec7830690317d9ba564d94517feb04451d704f810e5b09924a314778"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12016.status.txt",
+        "bytes": 109127,
+        "sha256": "d6b0c92dec7830690317d9ba564d94517feb04451d704f810e5b09924a314778",
+        "downloaded_at_utc": "2026-09-28T13:35:54Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2017",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2017",
+      "form": {
+        "date": "2017",
+        "datemonth": "2017",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:36:05Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12017.zip",
+      "zip_bytes": 3431978,
+      "zip_sha256": "e5ba3800e37fae0e326dbaa234952ca04e8f378c08b036530a2811206110c10b",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2017.csv",
+          "bytes": 20045016,
+          "sha256": "04726017e04391b319cce1ad01b7146332c6cf6247890b9999dc7e106f8a2939"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2017.txt",
+          "bytes": 155657,
+          "sha256": "b12fb4d3419304d6a3c5502f5ee18ffe1293619c03cfccfba3fe76fdab13b296"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12017.status.txt",
+        "bytes": 155657,
+        "sha256": "b12fb4d3419304d6a3c5502f5ee18ffe1293619c03cfccfba3fe76fdab13b296",
+        "downloaded_at_utc": "2026-09-28T13:36:11Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2018",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2018",
+      "form": {
+        "date": "2018",
+        "datemonth": "2018",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:36:26Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12018.zip",
+      "zip_bytes": 3503386,
+      "zip_sha256": "38063d33cdb22634cf4ed6d67f8c6d20345c5d904be9dcd33ca928ec4153481f",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2018.csv",
+          "bytes": 20102094,
+          "sha256": "23348ae2c1ce7970b4472786dd8381a7ec540d9ad86845b94bd737b2470fbab0"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2018.txt",
+          "bytes": 150938,
+          "sha256": "d34cc4bbf6d668eeecb4f005e9ffb831c86555062e57694a82c9f25325e7ad5e"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12018.status.txt",
+        "bytes": 150938,
+        "sha256": "d34cc4bbf6d668eeecb4f005e9ffb831c86555062e57694a82c9f25325e7ad5e",
+        "downloaded_at_utc": "2026-09-28T13:36:31Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2019",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2019",
+      "form": {
+        "date": "2019",
+        "datemonth": "2019",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:36:45Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12019.zip",
+      "zip_bytes": 3411684,
+      "zip_sha256": "bc6d390e539d267fcd7856851db463fc098de5d7f7d732ddca75604f4a259bf2",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2019.csv",
+          "bytes": 20109384,
+          "sha256": "6c2f4dcbd0634c61e5598f147b9a777b00499561fb41a0b5b9f646e3afb50aac"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2019.txt",
+          "bytes": 21130,
+          "sha256": "52f44370ad5b83cd91de27d26fbe7d34cd6dd81c7c969abdcea6c23fbd676f31"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12019.status.txt",
+        "bytes": 21130,
+        "sha256": "52f44370ad5b83cd91de27d26fbe7d34cd6dd81c7c969abdcea6c23fbd676f31",
+        "downloaded_at_utc": "2026-09-28T13:36:50Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2020",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2020",
+      "form": {
+        "date": "2020",
+        "datemonth": "2020",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:37:06Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12020.zip",
+      "zip_bytes": 3625339,
+      "zip_sha256": "07ad9524551d1b5bc617cd6971e5a6f38156f92e7046fa368abd22cbe7d9a044",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2020.csv",
+          "bytes": 20145078,
+          "sha256": "67b74e8e69feeda07d3a050edede3e76b876d8cdf7fec89b6b274fb04ac92dcc"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2020.txt",
+          "bytes": 37763,
+          "sha256": "0274c630ed42d17da0941e2ce4ade337f1201957ceac1c30ba73b9845bc1d48f"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12020.status.txt",
+        "bytes": 37763,
+        "sha256": "0274c630ed42d17da0941e2ce4ade337f1201957ceac1c30ba73b9845bc1d48f",
+        "downloaded_at_utc": "2026-09-28T13:37:11Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2021",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2021",
+      "form": {
+        "date": "2021",
+        "datemonth": "2021",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:37:27Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12021.zip",
+      "zip_bytes": 3447415,
+      "zip_sha256": "5ce226e9e1cabcb8d3cab7d5c64135da2c864b0d79a559c8a08c6e1e3d47866e",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2021.csv",
+          "bytes": 20001492,
+          "sha256": "b39b6c95bc37b469ff8a9827371908259ec56382e6bab139b32f4fa47253820e"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2021.txt",
+          "bytes": 232178,
+          "sha256": "cce96c4fd0c6dc6fd856eab6367248def580365c562fce0a8572c5b389c2c89c"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12021.status.txt",
+        "bytes": 232178,
+        "sha256": "cce96c4fd0c6dc6fd856eab6367248def580365c562fce0a8572c5b389c2c89c",
+        "downloaded_at_utc": "2026-09-28T13:37:32Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2022",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2022",
+      "form": {
+        "date": "2022",
+        "datemonth": "2022",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:37:50Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12022.zip",
+      "zip_bytes": 3670216,
+      "zip_sha256": "6c3134133d24effe9ebae1ee02c7b0db3bff8f60f92bd9add846abc54d00a86e",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2022.csv",
+          "bytes": 20114676,
+          "sha256": "05d645c1b11a230486b99f116fde964af68d21bf6d276f23c56f09ddddbec9cb"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2022.txt",
+          "bytes": 105440,
+          "sha256": "b1291a70d39ffd8c8748bd11605bde19ef0cb1eb12203be48fa271c580b24d46"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12022.status.txt",
+        "bytes": 105440,
+        "sha256": "b1291a70d39ffd8c8748bd11605bde19ef0cb1eb12203be48fa271c580b24d46",
+        "downloaded_at_utc": "2026-09-28T13:37:56Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2023",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2023",
+      "form": {
+        "date": "2023",
+        "datemonth": "2023",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:38:19Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12023.zip",
+      "zip_bytes": 3049553,
+      "zip_sha256": "4e7031d841a953ae76d1ba056780838bddd08e0d5eac62dd21c64b28b7b1a68b",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2023.csv",
+          "bytes": 17413218,
+          "sha256": "4ad2c48357848ccc7e53402b9e00e693a7593dac311fa30dfc1db253b03e0e3f"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2023.txt",
+          "bytes": 118766,
+          "sha256": "fa3e081119eca45de7f5e5b5235fe06af808f1085b9c7b07dac78f2e9bba2f64"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12023.status.txt",
+        "bytes": 118766,
+        "sha256": "fa3e081119eca45de7f5e5b5235fe06af808f1085b9c7b07dac78f2e9bba2f64",
+        "downloaded_at_utc": "2026-09-28T13:38:24Z"
+      },
+      "stage": "A"
+    },
+    {
+      "period": "2024",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2024",
+      "form": {
+        "date": "2024",
+        "datemonth": "2024",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:47:31Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12024.zip",
+      "zip_bytes": 3375781,
+      "zip_sha256": "030b05b4c670c7e152bf4aa4112488c96695d2dcc2b31ca13a3b4834b8431077",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2024.csv",
+          "bytes": 20093778,
+          "sha256": "0de617c38f1804541da10b4134e185efe71e7b2a7c9e7581b073644089b9439b"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2024.txt",
+          "bytes": 173828,
+          "sha256": "5c8b73dd7a7729cc98ad9f7e2cfe2f6976f52cae403863141e7f898c5182755f"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12024.status.txt",
+        "bytes": 173828,
+        "sha256": "5c8b73dd7a7729cc98ad9f7e2cfe2f6976f52cae403863141e7f898c5182755f",
+        "downloaded_at_utc": "2026-09-28T13:47:36Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2025",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2025",
+      "form": {
+        "date": "2025",
+        "datemonth": "2025",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:47:48Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M12025.zip",
+      "zip_bytes": 3496823,
+      "zip_sha256": "7b69c334eadd10568168634cff3ca37b06e5fb9057db4da9b590e2ef2034854e",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2025.csv",
+          "bytes": 20038914,
+          "sha256": "2e8aaf4ab712008542843f923cee0224ae87ce69dfa6da197454f9de150705f9"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_2025.txt",
+          "bytes": 153140,
+          "sha256": "254dbf66424fb152862a7f68c3871708a64999d875793223e9a42992a6697357"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M12025.status.txt",
+        "bytes": 153140,
+        "sha256": "254dbf66424fb152862a7f68c3871708a64999d875793223e9a42992a6697357",
+        "downloaded_at_utc": "2026-09-28T13:47:53Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2026/1",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2026/1",
+      "form": {
+        "date": "2026",
+        "datemonth": "202601",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:48:04Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M1202601.zip",
+      "zip_bytes": 282446,
+      "zip_sha256": "870c6a632f168004e2af0bcc8d357cb07a533c68d123aec5fa48904bc3d2ce08",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202601.csv",
+          "bytes": 1625778,
+          "sha256": "04f26f77e3e20420e319fd0d59f5ad40c411e9c4125cf1ce9cecedd45216fa33"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202601.txt",
+          "bytes": 10659,
+          "sha256": "7aec8e3beed9fe044d4db89c4d7cd08912479b731f6fe751f466f422136f5ef8"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M1202601.status.txt",
+        "bytes": 10659,
+        "sha256": "7aec8e3beed9fe044d4db89c4d7cd08912479b731f6fe751f466f422136f5ef8",
+        "downloaded_at_utc": "2026-09-28T13:48:08Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2026/2",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2026/2",
+      "form": {
+        "date": "2026",
+        "datemonth": "202602",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:48:18Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M1202602.zip",
+      "zip_bytes": 271128,
+      "zip_sha256": "16831fa0058c5385a3b0da8127804f944a423d78d1c35f0c8b09b01e2e4f6340",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202602.csv",
+          "bytes": 1548072,
+          "sha256": "95068c527ff35e92c45b6191a9fd3949a58b3ac3358c2d526f2a91231f685768"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202602.txt",
+          "bytes": 9515,
+          "sha256": "53d299f1d71532b09544e4c3ed8a78cb5561ba37405cdae6bcc92957151f7878"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M1202602.status.txt",
+        "bytes": 9515,
+        "sha256": "53d299f1d71532b09544e4c3ed8a78cb5561ba37405cdae6bcc92957151f7878",
+        "downloaded_at_utc": "2026-09-28T13:48:23Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2026/3",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2026/3",
+      "form": {
+        "date": "2026",
+        "datemonth": "202603",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:48:33Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M1202603.zip",
+      "zip_bytes": 315578,
+      "zip_sha256": "55a7e44b8f74430122811bb869b52da174443721ae885fbe9e18836bcb1fcc7c",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202603.csv",
+          "bytes": 1725030,
+          "sha256": "9190776e2b59022ffb558e5e34015e3ce46625461ca13a3e42d9b30c3fb78b31"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202603.txt",
+          "bytes": 5599,
+          "sha256": "4c17fd80f19d5322380a50fe8374a383dd580a55313a8080e7fe24e7bcbb44e7"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M1202603.status.txt",
+        "bytes": 5599,
+        "sha256": "4c17fd80f19d5322380a50fe8374a383dd580a55313a8080e7fe24e7bcbb44e7",
+        "downloaded_at_utc": "2026-09-28T13:48:37Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2026/4",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2026/4",
+      "form": {
+        "date": "2026",
+        "datemonth": "202604",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:48:47Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M1202604.zip",
+      "zip_bytes": 294494,
+      "zip_sha256": "65b5760fa4f06061ae7d8d549e55f29c6674162f76df8ea453dcbbe47d7ceebd",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202604.csv",
+          "bytes": 1699704,
+          "sha256": "eea9ac470afe4d6eb89d9a83e5ad1fb9c566faa30848426eabb6e9868f0bc5bc"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202604.txt",
+          "bytes": 14520,
+          "sha256": "dffb9ff0a1c6d34ea5521c13a10de3569ca4adb970ca17eb17cb401d0d95e26e"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M1202604.status.txt",
+        "bytes": 14520,
+        "sha256": "dffb9ff0a1c6d34ea5521c13a10de3569ca4adb970ca17eb17cb401d0d95e26e",
+        "downloaded_at_utc": "2026-09-28T13:48:52Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2026/5",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2026/5",
+      "form": {
+        "date": "2026",
+        "datemonth": "202605",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:49:02Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M1202605.zip",
+      "zip_bytes": 271883,
+      "zip_sha256": "8af401940ee755133fcd677b1ef4e7d07c4d45269370d4bfb4fcb9af98a79f1e",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202605.csv",
+          "bytes": 1586736,
+          "sha256": "fc8e03b9fc4e7f4ed9efdc12bf2cac2383551ed250b98095327bb66654ed57b9"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202605.txt",
+          "bytes": 16197,
+          "sha256": "e6022732e4698620b781b2613196687af1294b2b46903aaf4f6c36cc78d98354"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M1202605.status.txt",
+        "bytes": 16197,
+        "sha256": "e6022732e4698620b781b2613196687af1294b2b46903aaf4f6c36cc78d98354",
+        "downloaded_at_utc": "2026-09-28T13:49:06Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2026/6",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2026/6",
+      "form": {
+        "date": "2026",
+        "datemonth": "202606",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:49:16Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M1202606.zip",
+      "zip_bytes": 289954,
+      "zip_sha256": "b6534603559ce1d611849e99f129c224832431b0135f9cef4830c14152db2e32",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202606.csv",
+          "bytes": 1702728,
+          "sha256": "cfac2017e8fc0d00e1bf91b300bbee091c75e241a48f05a2eb108426caf7833f"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202606.txt",
+          "bytes": 10540,
+          "sha256": "9a45a5a7e96f37e0f38744d4e189d4b5219c852e0c941ac562893f60c13fceb0"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M1202606.status.txt",
+        "bytes": 10540,
+        "sha256": "9a45a5a7e96f37e0f38744d4e189d4b5219c852e0c941ac562893f60c13fceb0",
+        "downloaded_at_utc": "2026-09-28T13:49:21Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2026/7",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2026/7",
+      "form": {
+        "date": "2026",
+        "datemonth": "202607",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:49:31Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M1202607.zip",
+      "zip_bytes": 296702,
+      "zip_sha256": "eed97b0e50df94532cd6bb5497210670fdbe27acf3e0f94238c7542402113dea",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202607.csv",
+          "bytes": 1757160,
+          "sha256": "27fc3cdaf6517f30b91cf8ce433e12fa1490e32fb8c7f05f3f1ede04722e6540"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202607.txt",
+          "bytes": 10490,
+          "sha256": "5971db585ce7ddd7688c3b9c2731ad39f1b8217e5722531e01b59b0ca1c26562"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M1202607.status.txt",
+        "bytes": 10490,
+        "sha256": "5971db585ce7ddd7688c3b9c2731ad39f1b8217e5722531e01b59b0ca1c26562",
+        "downloaded_at_utc": "2026-09-28T13:49:35Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2026/8",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2026/8",
+      "form": {
+        "date": "2026",
+        "datemonth": "202608",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:49:45Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M1202608.zip",
+      "zip_bytes": 267749,
+      "zip_sha256": "41d82691331216fbca668d65f449cb3a0824b3bdfb7c2d94b8689dd95b52402a",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202608.csv",
+          "bytes": 1648242,
+          "sha256": "241204a9e079b9783f0aef74b1ac48293ae4f13a1a312bc3f529fd32c248a564"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202608.txt",
+          "bytes": 10356,
+          "sha256": "a2fab3e3d0ac667161d9a2c6efe3ec0c70c2216516b0206d545f18165a6e99bb"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M1202608.status.txt",
+        "bytes": 10356,
+        "sha256": "a2fab3e3d0ac667161d9a2c6efe3ec0c70c2216516b0206d545f18165a6e99bb",
+        "downloaded_at_utc": "2026-09-28T13:49:50Z"
+      },
+      "stage": "B"
+    },
+    {
+      "period": "2026/9",
+      "source_page": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/gbpusd/2026/9",
+      "form": {
+        "date": "2026",
+        "datemonth": "202609",
+        "platform": "ASCII",
+        "timeframe": "M1",
+        "fxpair": "GBPUSD"
+      },
+      "downloaded_at_utc": "2026-09-28T13:50:00Z",
+      "zip_file": "HISTDATA_COM_ASCII_GBPUSD_M1202609.zip",
+      "zip_bytes": 226763,
+      "zip_sha256": "ff9c0cefdab9372ffe453344ac26e425103b9907c78e1e85793403a869ce95a7",
+      "members": [
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202609.csv",
+          "bytes": 1379646,
+          "sha256": "da2dfece6d2e572c60c0f800f8f49eb7cb022b267040385a3d120b144ff61f5a"
+        },
+        {
+          "name": "DAT_ASCII_GBPUSD_M1_202609.txt",
+          "bytes": 9281,
+          "sha256": "45c88a36c1c65da1619715dc08463a2ff300872cd270c4503335924adfaa292d"
+        }
+      ],
+      "status_report": {
+        "name": "HISTDATA_COM_ASCII_GBPUSD_M1202609.status.txt",
+        "bytes": 9281,
+        "sha256": "45c88a36c1c65da1619715dc08463a2ff300872cd270c4503335924adfaa292d",
+        "downloaded_at_utc": "2026-09-28T13:50:04Z"
+      },
+      "stage": "B"
+    }
+  ],
+  "fetcher_sha256": "dac612dbf8178556d5216d4a6018672dafbba51331886af1f6cb38eaeeb0cd6a"
+}

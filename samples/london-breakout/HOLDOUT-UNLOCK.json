@@ -1,0 +1,9 @@
+{
+  "study": "LB-1 London Breakout",
+  "stage_a_results": "stageA/results.json",
+  "stage_a_results_sha256": "4d25d550c161b80b696f3a8cdd8d6af2b0bda913016170d29f8c53aa92b07318",
+  "stage_a_commit": "dfdaeee36c991d27fe9d8c2487dd5466a9f34676",
+  "stage_a_panel_sha256": "fb1865a321df1ddc687c7e8c81af323ada090e4d6aab2243000a39bf34b904d8",
+  "unlocked_at_utc": "2026-09-28T13:47:04Z",
+  "note": "PREREG §5.3 step 4: holdout files (2024, 2025, 2026-01..09) may be downloaded only after this file is committed and pushed."
+}

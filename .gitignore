@@ -8,3 +8,5 @@ build/
 # Raw vendor data is never committed: fetch scripts + hashes instead.
 samples/data/raw/
 samples/onchain1/raw/
+# London Breakout (LB-1): HistData raw files are never committed (no redistribution); hashes in samples/london-breakout/MANIFEST.json
+samples/london-breakout/raw/

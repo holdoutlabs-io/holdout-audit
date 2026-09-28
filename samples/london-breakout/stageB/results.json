@@ -1,0 +1,185 @@
+{
+  "stage": "B",
+  "P2": {
+    "sr_annual": -1.0785081012675755,
+    "years": 2.746153846153846,
+    "t": -1.7872522133720445,
+    "p": 0.963051633127456,
+    "mean_annual": -0.044645177269847056,
+    "n_days": 714
+  },
+  "holm_adjusted": {
+    "P2": 1.0,
+    "P1": 1.0
+  },
+  "full_sample_default": {
+    "sr_annual": -0.8999909125234146,
+    "years": 25.98076923076923,
+    "t": -4.587373769351145,
+    "p": 0.9999977557167232,
+    "mean_annual": -0.04024010716462145,
+    "n_days": 6755
+  },
+  "verdict": "WENT THE OTHER WAY: as coded, it lost money net of costs over the full sample",
+  "holdout_by_variant": {
+    "risky_stop=0.0050|open_minutes=15": -0.746445017059894,
+    "risky_stop=0.0050|open_minutes=30": -0.6947293143294753,
+    "risky_stop=0.0050|open_minutes=45": -0.7867552954594768,
+    "risky_stop=0.0075|open_minutes=15": -1.036787187660654,
+    "risky_stop=0.0075|open_minutes=30": -1.015135023405869,
+    "risky_stop=0.0075|open_minutes=45": -1.1538498785635782,
+    "risky_stop=0.0100|open_minutes=15": -0.7788819589205335,
+    "risky_stop=0.0100|open_minutes=30": -1.0785081012675755,
+    "risky_stop=0.0100|open_minutes=45": -1.3825717330687997,
+    "risky_stop=0.0125|open_minutes=15": -1.2059857943562486,
+    "risky_stop=0.0125|open_minutes=30": -1.316999944728868,
+    "risky_stop=0.0125|open_minutes=45": -1.5360901315537383,
+    "risky_stop=0.0150|open_minutes=15": -0.8609173845664064,
+    "risky_stop=0.0150|open_minutes=30": -1.0045268374199159,
+    "risky_stop=0.0150|open_minutes=45": -1.197421015233183
+  },
+  "in_sample_best_in_holdout": {
+    "sr_annual": -0.8609173845664064,
+    "years": 2.746153846153846,
+    "t": -1.4266712501170533,
+    "p": 0.9231626618558332,
+    "mean_annual": -0.034576746139421445,
+    "n_days": 714
+  },
+  "rubric_full_sample": {
+    "headline": {
+      "name": "London Breakout (as coded), GBP/USD, full sample",
+      "rubric_version": "1.2",
+      "objective": "beat_benchmark",
+      "benchmark": "zero",
+      "grade": "F",
+      "score": 0.125,
+      "caps": [],
+      "sr_annual": -0.9,
+      "excess_sr_annual": -0.9,
+      "excess_return_annual": -0.0402,
+      "beats_benchmark": false,
+      "dsr": 0.0,
+      "n_trials": 15,
+      "pbo": 0.0965,
+      "haircut_p": 1.0,
+      "spa_p": 1.0,
+      "holdout_excess_sr_is": -0.881,
+      "holdout_excess_sr_oos": -1.079,
+      "max_drawdown": 0.6703
+    },
+    "dsr": 1.0825983101139616e-09,
+    "n_trials": 15,
+    "checks": [
+      {
+        "key": "dsr",
+        "status": "FAIL",
+        "value": "DSR 0.000 (N = 15)"
+      },
+      {
+        "key": "pbo",
+        "status": "PASS",
+        "value": "PBO 0.097 (12870 splits)"
+      },
+      {
+        "key": "haircut",
+        "status": "FAIL",
+        "value": "adj. p 1.0000 (BHY)"
+      },
+      {
+        "key": "spa",
+        "status": "FAIL",
+        "value": "SPA p 1.000; RC p 1.000"
+      },
+      {
+        "key": "holdout",
+        "status": "FAIL",
+        "value": "excess SR -0.88 -> -1.08"
+      },
+      {
+        "key": "stability",
+        "status": "FAIL",
+        "value": "19% of years ahead"
+      },
+      {
+        "key": "costs",
+        "status": "FAIL",
+        "value": "break-even -1.0 bps"
+      },
+      {
+        "key": "surface",
+        "status": "FAIL",
+        "value": "neighbours n/a% of chosen"
+      }
+    ]
+  },
+  "holdout_sensitivities": {
+    "cost_low_0.5pip_side": {
+      "sr_annual": -0.6859727413452908,
+      "years": 2.746153846153846,
+      "t": -1.13676132691199,
+      "p": 0.8721809628356287,
+      "mean_annual": -0.028374854757194302,
+      "n_days": 714
+    },
+    "cost_high_2.0pip_side": {
+      "sr_annual": -1.8608015989423965,
+      "years": 2.746153846153846,
+      "t": -3.0836317061015137,
+      "p": 0.9989775471357919,
+      "mean_annual": -0.07718582229515254,
+      "n_days": 714
+    },
+    "gross": {
+      "sr_annual": -0.29279648730673324,
+      "years": 2.746153846153846,
+      "t": -0.4852083812736135,
+      "p": 0.6862357313112118,
+      "mean_annual": -0.01210453224454156,
+      "n_days": 714
+    },
+    "next_bar_fill": {
+      "sr_annual": -1.0697794340014042,
+      "years": 2.746153846153846,
+      "t": -1.7727874820706129,
+      "p": 0.9618680357755404,
+      "mean_annual": -0.04423720396899513,
+      "n_days": 714
+    },
+    "london_dst_clock": {
+      "sr_annual": -1.2800961863837983,
+      "years": 2.75,
+      "t": -2.122799372899956,
+      "p": 0.9831146662876046,
+      "mean_annual": -0.05398881441146816,
+      "n_days": 715
+    },
+    "months_bst_approx_apr_oct": {
+      "sr_annual": -0.5991311555885501,
+      "years": 1.6730769230769231,
+      "t": -0.7749610203463811,
+      "p": 0.7808186534407098,
+      "mean_annual": -0.02418605787253895,
+      "n_days": 435
+    },
+    "months_gmt_approx_nov_mar": {
+      "sr_annual": -1.7823310233298668,
+      "years": 1.073076923076923,
+      "t": -1.8463064809401555,
+      "p": 0.967576141369592,
+      "mean_annual": -0.07654380428715538,
+      "n_days": 279
+    },
+    "breakeven_pips_per_side": -0.36641025641026176,
+    "mean_gross_pips_per_trade": -0.7328205128205235,
+    "hit_rate": 0.48717948717948717,
+    "exit_reasons": {
+      "close": 333,
+      "stop": 117,
+      "target": 109,
+      "window_reversal": 26
+    },
+    "trades": 585
+  },
+  "panel_sha256": "edf2cc473d7404d762e3654f725874709e7c3d225b5d8839f9fc66f2d6701741"
+}

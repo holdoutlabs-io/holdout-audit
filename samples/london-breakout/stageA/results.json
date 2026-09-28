@@ -1,0 +1,186 @@
+{
+  "stage": "A",
+  "P1": {
+    "statistic": "1 - DSR at N = 15 (rubric v1.2 'dsr' check), default config",
+    "dsr": 8.613383570874551e-09,
+    "p": 0.9999999913866164
+  },
+  "default": {
+    "sr_annual": -0.880880537543366,
+    "years": 23.234615384615385,
+    "t": -4.246046622771346,
+    "p": 0.9999891212312053,
+    "mean_annual": -0.03971946156701656,
+    "n_days": 6041
+  },
+  "rubric": {
+    "headline": {
+      "name": "London Breakout (as coded), GBP/USD, Stage A",
+      "rubric_version": "1.2",
+      "objective": "beat_benchmark",
+      "benchmark": "zero",
+      "grade": "F",
+      "score": 0.062,
+      "caps": [],
+      "sr_annual": -0.881,
+      "excess_sr_annual": -0.881,
+      "excess_return_annual": -0.0397,
+      "beats_benchmark": false,
+      "dsr": 0.0,
+      "n_trials": 15,
+      "pbo": 0.2166,
+      "haircut_p": 1.0,
+      "spa_p": 1.0,
+      "holdout_excess_sr_is": -0.647,
+      "holdout_excess_sr_oos": -1.349,
+      "max_drawdown": 0.6266
+    },
+    "dsr": 8.613383570874551e-09,
+    "n_trials": 15,
+    "checks": [
+      {
+        "key": "dsr",
+        "status": "FAIL",
+        "value": "DSR 0.000 (N = 15)"
+      },
+      {
+        "key": "pbo",
+        "status": "CAUTION",
+        "value": "PBO 0.217 (12870 splits)"
+      },
+      {
+        "key": "haircut",
+        "status": "FAIL",
+        "value": "adj. p 1.0000 (BHY)"
+      },
+      {
+        "key": "spa",
+        "status": "FAIL",
+        "value": "SPA p 1.000; RC p 1.000"
+      },
+      {
+        "key": "holdout",
+        "status": "FAIL",
+        "value": "excess SR -0.65 -> -1.35"
+      },
+      {
+        "key": "stability",
+        "status": "FAIL",
+        "value": "21% of years ahead"
+      },
+      {
+        "key": "costs",
+        "status": "FAIL",
+        "value": "break-even -1.0 bps"
+      },
+      {
+        "key": "surface",
+        "status": "FAIL",
+        "value": "neighbours n/a% of chosen"
+      }
+    ]
+  },
+  "variant_sr_annual": {
+    "risky_stop=0.0050|open_minutes=15": -0.6158978230507369,
+    "risky_stop=0.0050|open_minutes=30": -0.8217557562724235,
+    "risky_stop=0.0050|open_minutes=45": -0.9853121845858314,
+    "risky_stop=0.0075|open_minutes=15": -0.7778784814505741,
+    "risky_stop=0.0075|open_minutes=30": -0.9137168610237101,
+    "risky_stop=0.0075|open_minutes=45": -0.984883133355595,
+    "risky_stop=0.0100|open_minutes=15": -0.6666927817372678,
+    "risky_stop=0.0100|open_minutes=30": -0.880880537543366,
+    "risky_stop=0.0100|open_minutes=45": -0.9280679822994814,
+    "risky_stop=0.0125|open_minutes=15": -0.5898436058710229,
+    "risky_stop=0.0125|open_minutes=30": -0.7712316272781958,
+    "risky_stop=0.0125|open_minutes=45": -0.7735383945835528,
+    "risky_stop=0.0150|open_minutes=15": -0.4213168862953545,
+    "risky_stop=0.0150|open_minutes=30": -0.6448581482067651,
+    "risky_stop=0.0150|open_minutes=45": -0.6840510275404676
+  },
+  "in_sample_best": "risky_stop=0.0150|open_minutes=15",
+  "sensitivities": {
+    "cost_low_0.5pip_side": {
+      "sr_annual": -0.576015135748869,
+      "years": 23.234615384615385,
+      "t": -2.776525326161218,
+      "p": 0.9972528322830876,
+      "mean_annual": -0.025948601403577375,
+      "n_days": 6041
+    },
+    "cost_high_2.0pip_side": {
+      "sr_annual": -1.488257947119262,
+      "years": 23.234615384615385,
+      "t": -7.173745316023925,
+      "p": 0.9999999999996352,
+      "mean_annual": -0.06726118189389496,
+      "n_days": 6041
+    },
+    "gross": {
+      "sr_annual": -0.27053907971476066,
+      "years": 23.234615384615385,
+      "t": -1.3040605357840314,
+      "p": 0.9038935284513655,
+      "mean_annual": -0.012177741240138177,
+      "n_days": 6041
+    },
+    "next_bar_fill": {
+      "sr_annual": -0.9444792618960982,
+      "years": 23.234615384615385,
+      "t": -4.552607089532924,
+      "p": 0.9999973507412852,
+      "mean_annual": -0.042391495105578464,
+      "n_days": 6041
+    },
+    "london_dst_clock": {
+      "sr_annual": -0.8484530641007677,
+      "years": 23.373076923076923,
+      "t": -4.101906593395368,
+      "p": 0.9999795120152273,
+      "mean_annual": -0.03903816886562667,
+      "n_days": 6077
+    },
+    "months_bst_approx_apr_oct": {
+      "sr_annual": -0.9947967123121232,
+      "years": 13.776923076923078,
+      "t": -3.692414587730629,
+      "p": 0.9998889325223653,
+      "mean_annual": -0.0448581891429625,
+      "n_days": 3582
+    },
+    "months_gmt_approx_nov_mar": {
+      "sr_annual": -0.7148387606844242,
+      "years": 9.457692307692307,
+      "t": -2.198369467300409,
+      "p": 0.9860386061589309,
+      "mean_annual": -0.03223392997814373,
+      "n_days": 2459
+    },
+    "before_publication": {
+      "sr_annual": -0.7088530031154138,
+      "years": 17.515384615384615,
+      "t": -2.9666480239211857,
+      "p": 0.9984946730048897,
+      "mean_annual": -0.030448964280918082,
+      "n_days": 4554
+    },
+    "after_publication": {
+      "sr_annual": -1.3341026407470322,
+      "years": 5.719230769230769,
+      "t": -3.1904948952641288,
+      "p": 0.9992898532498384,
+      "mean_annual": -0.06811074915335988,
+      "n_days": 1487
+    },
+    "breakeven_pips_per_side": -0.32598162071846065,
+    "mean_gross_pips_per_trade": -0.6519632414369213,
+    "hit_rate": 0.4791144527986633,
+    "exit_reasons": {
+      "target": 1662,
+      "stop": 1621,
+      "close": 1246,
+      "window_reversal": 259
+    },
+    "trades": 4784
+  },
+  "panel_sha256": "fb1865a321df1ddc687c7e8c81af323ada090e4d6aab2243000a39bf34b904d8"
+}
