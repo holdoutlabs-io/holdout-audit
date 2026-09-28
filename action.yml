@@ -1,0 +1,169 @@
+name: "Holdout audit"
+description: "Deflated Sharpe, PBO, holdout check and an A-F fragility grade for a backtest. Statistics on past data, not investment advice."
+author: "Holdout Labs"
+branding:
+  icon: "bar-chart-2"
+  color: "gray-dark"
+
+inputs:
+  returns:
+    description: "Path to a CSV of dates and strategy returns (date,return[,turnover][,market]; see docs/INPUT-FORMATS.md)."
+    required: true
+  benchmark:
+    description: "auto | zero | market, or a path to a CSV of benchmark returns (date,return). auto uses a market column if present, else zero."
+    required: false
+    default: "auto"
+  variants:
+    description: "Path to a CSV of the returns of every variant tried (date,<variant>,...). Enables PBO and sets N for the deflated Sharpe."
+    required: false
+    default: ""
+  chosen:
+    description: "Column of the variants file that is the audited strategy (optional)."
+    required: false
+    default: ""
+  n-trials:
+    description: "Number of variants tried, if there is no variants file."
+    required: false
+    default: ""
+  holdout-start:
+    description: "First date of the holdout (YYYY-MM-DD). Default: the last 30% of the sample."
+    required: false
+    default: ""
+  frequency:
+    description: "auto, daily, daily-365, crypto, weekly, monthly, or periods per year (e.g. 252)."
+    required: false
+    default: "auto"
+  cost-bps:
+    description: "One-way cost per unit turnover, in basis points (needs a turnover column)."
+    required: false
+    default: "0"
+  name:
+    description: "Strategy name shown in the summary."
+    required: false
+    default: "Strategy"
+  badge-path:
+    description: "Write a shields-style SVG badge ('holdout grade | B') to this path (optional)."
+    required: false
+    default: ""
+  fail-below:
+    description: "Fail the job if the grade is worse than this letter (A-F). Empty: never fail on the grade."
+    required: false
+    default: ""
+  comment:
+    description: "On pull_request events, post or update one PR comment with the summary (needs pull-requests: write)."
+    required: false
+    default: "true"
+  github-token:
+    description: "Token used for the PR comment."
+    required: false
+    default: ${{ github.token }}
+  python-version:
+    description: "Python used to run the audit (installed privately; your job's Python on PATH is not changed)."
+    required: false
+    default: "3.12"
+
+outputs:
+  grade:
+    description: "Fragility grade A-F (A = least fragile). Not a forecast."
+    value: ${{ steps.audit.outputs.grade }}
+  dsr:
+    description: "Deflated Sharpe ratio of the excess returns."
+    value: ${{ steps.audit.outputs.dsr }}
+  pbo:
+    description: "Probability of backtest overfitting (empty without a variants file)."
+    value: ${{ steps.audit.outputs.pbo }}
+  score:
+    description: "Share of rubric points earned (0-1)."
+    value: ${{ steps.audit.outputs.score }}
+  summary-path:
+    description: "Path of the markdown summary."
+    value: ${{ steps.audit.outputs.summary-path }}
+
+runs:
+  using: "composite"
+  steps:
+    - id: py
+      uses: actions/setup-python@v7
+      with:
+        python-version: ${{ inputs.python-version }}
+        update-environment: false
+
+    - name: Install holdout-audit
+      shell: bash
+      env:
+        PY: ${{ steps.py.outputs.python-path }}
+        ACTION_PATH: ${{ github.action_path }}
+        VENV: ${{ runner.temp }}/holdout-audit-venv
+      run: |
+        "$PY" -m venv "$VENV"
+        if [ -x "$VENV/bin/python" ]; then VPY="$VENV/bin/python"; else VPY="$VENV/Scripts/python.exe"; fi
+        "$VPY" -m pip install --quiet --disable-pip-version-check "$ACTION_PATH"
+        echo "HOLDOUT_AUDIT_PY=$VPY" >> "$GITHUB_ENV"
+
+    - id: audit
+      name: Run holdout-audit ci
+      shell: bash
+      env:
+        IN_RETURNS: ${{ inputs.returns }}
+        IN_BENCHMARK: ${{ inputs.benchmark }}
+        IN_VARIANTS: ${{ inputs.variants }}
+        IN_CHOSEN: ${{ inputs.chosen }}
+        IN_N_TRIALS: ${{ inputs.n-trials }}
+        IN_HOLDOUT: ${{ inputs.holdout-start }}
+        IN_FREQ: ${{ inputs.frequency }}
+        IN_COST: ${{ inputs.cost-bps }}
+        IN_NAME: ${{ inputs.name }}
+        IN_BADGE: ${{ inputs.badge-path }}
+        IN_FAIL: ${{ inputs.fail-below }}
+        SUMMARY: ${{ runner.temp }}/holdout-audit-summary.md
+      run: |
+        args=(ci --returns "$IN_RETURNS" --benchmark "$IN_BENCHMARK" --frequency "$IN_FREQ"
+              --cost-bps "$IN_COST" --name "$IN_NAME" --summary-out "$SUMMARY")
+        [ -n "$IN_VARIANTS" ] && args+=(--variants "$IN_VARIANTS")
+        [ -n "$IN_CHOSEN" ] && args+=(--chosen "$IN_CHOSEN")
+        [ -n "$IN_N_TRIALS" ] && args+=(--n-trials "$IN_N_TRIALS")
+        [ -n "$IN_HOLDOUT" ] && args+=(--holdout-start "$IN_HOLDOUT")
+        [ -n "$IN_BADGE" ] && args+=(--badge "$IN_BADGE")
+        [ -n "$IN_FAIL" ] && args+=(--fail-below "$IN_FAIL")
+        set +e
+        "$HOLDOUT_AUDIT_PY" -m holdout_audit.cli "${args[@]}"
+        code=$?
+        set -e
+        echo "summary-path=$SUMMARY" >> "$GITHUB_OUTPUT"
+        echo "exit-code=$code" >> "$GITHUB_OUTPUT"
+        # exit 1 is the --fail-below verdict (reported after the PR comment); anything else is an error
+        if [ "$code" -ne 0 ] && [ ! -f "$SUMMARY" ]; then exit "$code"; fi
+
+    - name: Post or update the PR comment
+      if: ${{ always() && inputs.comment == 'true' && github.event.pull_request.number && steps.audit.outputs.summary-path != '' }}
+      uses: actions/github-script@v9
+      env:
+        SUMMARY: ${{ steps.audit.outputs.summary-path }}
+      with:
+        github-token: ${{ inputs.github-token }}
+        script: |
+          const fs = require('fs');
+          const marker = '<!-- holdout-audit-ci -->';
+          if (!fs.existsSync(process.env.SUMMARY)) return;
+          const body = fs.readFileSync(process.env.SUMMARY, 'utf8');
+          const { owner, repo } = context.repo;
+          const issue_number = context.payload.pull_request.number;
+          try {
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number, per_page: 100 });
+            const mine = comments.find(c => c.body && c.body.includes(marker));
+            if (mine) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: mine.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
+          } catch (e) {
+            core.warning(`holdout-audit: could not post the PR comment (${e.message}). ` +
+                         'Grant "pull-requests: write"; PRs from forks get a read-only token.');
+          }
+
+    - name: Apply fail-below
+      if: ${{ always() && steps.audit.outputs.exit-code != '' && steps.audit.outputs.exit-code != '0' }}
+      shell: bash
+      env:
+        CODE: ${{ steps.audit.outputs.exit-code }}
+      run: exit "$CODE"
