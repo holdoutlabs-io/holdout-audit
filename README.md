@@ -1,5 +1,7 @@
 # holdout-audit
 
+[![CI](https://github.com/holdoutlabs-io/holdout-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/holdoutlabs-io/holdout-audit/actions/workflows/ci.yml)
+
 **Scientific audits for trading strategies.** `holdout-audit` measures how much of a backtest survives the tests that catch overfitting:
 - how many variants were tried;
 - whether the edge holds on data the search never touched;
@@ -69,6 +71,50 @@ print(res.headline())
 write_report(res, "audit.html")
 ```
 
+## Use it in CI
+
+Add a few lines to any workflow. Every pull request then gets a comment (and every run a job summary) with the deflated Sharpe ratio, PBO (when you give the variant grid), the holdout comparison and the A–F grade. The action can also write a badge.
+
+```yaml
+permissions:
+  contents: read
+  pull-requests: write          # for the PR comment
+
+steps:
+  - uses: actions/checkout@v6
+  - id: holdout
+    uses: holdoutlabs-io/holdout-audit@v0
+    with:
+      returns: results/returns.csv       # date,return[,turnover][,market]
+      variants: results/variants.csv     # optional: every variant you tried (PBO, N for the DSR)
+      # n-trials: 40                     # ...or just how many variants you tried
+      holdout-start: "2023-01-02"        # first date the search never touched
+      frequency: daily                   # auto | daily | crypto | weekly | monthly | 252
+      badge-path: badges/holdout-grade.svg
+      # benchmark: bench.csv             # auto | zero | market | CSV of benchmark returns
+      # fail-below: C                    # fail the job on a D or F
+  - run: echo "grade ${{ steps.holdout.outputs.grade }}, DSR ${{ steps.holdout.outputs.dsr }}, PBO ${{ steps.holdout.outputs.pbo }}"
+```
+
+The badge is a self-contained SVG. Commit it, or publish it as an artifact, and link it from your README:
+
+![holdout grade: B](examples/github-action/holdout-grade.svg) *(example: seeded synthetic data)*
+
+```markdown
+[![holdout grade](badges/holdout-grade.svg)](https://holdoutlabs.io/tools/luck/)
+```
+
+Inputs:
+- `returns` (required);
+- `benchmark`, `variants`, `chosen`, `n-trials`, `holdout-start`, `frequency`, `cost-bps`, `name`;
+- `badge-path`, `fail-below`, `comment` (default `true`), `github-token`, `python-version`.
+
+Outputs: `grade`, `dsr`, `pbo`, `score` and `summary-path`. Without a workflow, run `holdout-audit ci --returns r.csv ...` locally; it takes the same options and prints the markdown summary.
+
+A full example, with seeded synthetic data and a workflow file, is in [`examples/github-action/`](examples/github-action/). This repository runs it on every push ([`ci.yml`](.github/workflows/ci.yml)).
+
+The grade rates how fragile the historical evidence is. It is not a forecast, and a good grade does not mean a strategy will make money. Statistics on past data, not investment advice. Want to try it without CI? Use [holdoutlabs.io/tools/luck](https://holdoutlabs.io/tools/luck/).
+
 ## Methods and citations
 
 Each statistic is described, with its assumptions and limits, in [docs/METHODS.md](docs/METHODS.md).
@@ -121,11 +167,13 @@ Some sealed documents in `samples/` are published byte for byte, because any edi
 
 ```
 src/holdout_audit/   the package: stats/ (sharpe, pbo, haircut, bootstrap, stability, objective, objective_sharpe),
-                     grade.py (rubrics), audit.py, report/ (HTML), seal.py (RFC 3161), rubric.py, cli.py
+                     grade.py (rubrics), audit.py, report/ (HTML), seal.py (RFC 3161), rubric.py, cli.py, ci.py
 tests/               pytest suite, including published worked examples where they exist
 docs/                METHODS, RUBRIC v1.0 / v1.1 / v1.2 with seal receipts, POSITIVE-CONTROLS, INPUT-FORMATS,
                      DISCLAIMER, SCOPE-POLICY, templates for preregistrations and objective declarations
 samples/             every published audit: preregistrations, seals, runners, fetch scripts, reports, summaries
+examples/            GitHub Action example (seeded synthetic data)
+action.yml           the GitHub Action (uses: holdoutlabs-io/holdout-audit@v0)
 ```
 
 ## Licence

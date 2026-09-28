@@ -1,4 +1,4 @@
-"""Command-line interface: ``holdout-audit audit|seal|verify-seal``."""
+"""Command-line interface: ``holdout-audit audit|ci|seal|seal-doc|verify-seal``."""
 
 from __future__ import annotations
 
@@ -87,6 +87,10 @@ def main(argv: list[str] | None = None) -> int:
     au.add_argument("--percent", action="store_true", help="returns are in percent, not fractions")
     au.add_argument("--out", default="audit-report.html")
     au.set_defaults(func=_audit)
+
+    from holdout_audit.ci import add_parser as add_ci_parser
+
+    add_ci_parser(sub)
 
     se = sub.add_parser("seal", help="preregister and RFC 3161-timestamp a forward trial (DigiCert + FreeTSA)")
     se.add_argument("prereg", help="preregistration JSON")

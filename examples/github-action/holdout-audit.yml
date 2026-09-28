@@ -1,0 +1,43 @@
+# Copy to .github/workflows/holdout-audit.yml in your repository and point the paths at your files.
+# The inputs here are the synthetic example in this folder (seeded random data, not market data).
+name: Holdout audit
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write   # for the PR comment; drop it (and set comment: false) if you do not want one
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      # Produce your backtest returns here (or commit them), e.g.:
+      # - run: python backtest.py --out returns.csv --variants-out variants.csv
+
+      - id: holdout
+        uses: holdoutlabs-io/holdout-audit@v0
+        with:
+          returns: examples/github-action/returns.csv        # date,return[,turnover][,market]
+          variants: examples/github-action/variants.csv      # every variant you tried (PBO, N for the DSR)
+          chosen: "fast=20|slow=150"                         # which variant column is the strategy
+          holdout-start: "2022-01-03"                        # data the search never touched
+          frequency: daily
+          cost-bps: "2"
+          badge-path: badges/holdout-grade.svg
+          # n-trials: 40        # instead of a variants file: how many variants you tried
+          # benchmark: bench.csv  # auto | zero | market | a CSV of benchmark returns
+          # fail-below: C       # fail the job on a D or F
+
+      - run: echo "grade ${{ steps.holdout.outputs.grade }}, DSR ${{ steps.holdout.outputs.dsr }}, PBO ${{ steps.holdout.outputs.pbo }}"
+
+      # Keep the badge: upload it, or commit it on main so your README can show it.
+      - uses: actions/upload-artifact@v7
+        with:
+          name: holdout-grade-badge
+          path: badges/holdout-grade.svg

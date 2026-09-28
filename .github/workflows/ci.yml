@@ -5,6 +5,9 @@ on:
     branches: ["**"]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ${{ matrix.os }}
@@ -22,3 +25,51 @@ jobs:
         run: uv sync --python ${{ matrix.python }}
       - name: Test
         run: uv run --python ${{ matrix.python }} pytest -q
+
+  # Dogfood: run this repository's GitHub Action on the synthetic example.
+  action:
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+      pull-requests: write
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+      - name: Example data is reproducible from its seeded script
+        shell: bash
+        run: |
+          uv run python examples/github-action/make_example.py
+          git diff --exit-code -- examples/github-action/
+      - id: audit
+        uses: ./
+        with:
+          returns: examples/github-action/returns.csv
+          variants: examples/github-action/variants.csv
+          chosen: "fast=20|slow=150"
+          holdout-start: "2022-01-03"
+          frequency: daily
+          cost-bps: "2"
+          name: "Synthetic example (seeded, not market data)"
+          badge-path: badges/holdout-grade.svg
+          fail-below: D
+          comment: ${{ matrix.os == 'ubuntu-latest' }}
+      - name: Check the action outputs
+        shell: bash
+        env:
+          GRADE: ${{ steps.audit.outputs.grade }}
+          DSR: ${{ steps.audit.outputs.dsr }}
+          PBO: ${{ steps.audit.outputs.pbo }}
+        run: |
+          echo "grade=$GRADE dsr=$DSR pbo=$PBO"
+          [[ "$GRADE" =~ ^[A-F]$ ]]
+          [ -n "$DSR" ] && [ -n "$PBO" ]
+          grep -q "holdout grade" badges/holdout-grade.svg
+      - uses: actions/upload-artifact@v7
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          name: holdout-grade-badge
+          path: badges/holdout-grade.svg
