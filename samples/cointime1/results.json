@@ -1,0 +1,211 @@
+{
+  "prereg_sha256": "270357082c5f85211245e9d050e71125d26d201738b8a89d03c80794ff526bea",
+  "metrics_csv_sha256": "28c1e42349f110ed30d1d835349d8885849a80bafb4c61e0ff3d0e9ce4fea7df",
+  "crosscheck": {
+    "metrics_sha256": "28c1e42349f110ed30d1d835349d8885849a80bafb4c61e0ff3d0e9ce4fea7df",
+    "rows": [
+      {
+        "id": "P1",
+        "date": "2023-01-01",
+        "quoted": 28659,
+        "ours": 28912.0,
+        "diff_pct": 0.88,
+        "set": "primary"
+      },
+      {
+        "id": "P2",
+        "date": "2023-10-10",
+        "quoted": 29720,
+        "ours": 29964.0,
+        "diff_pct": 0.82,
+        "set": "primary"
+      },
+      {
+        "id": "P3",
+        "date": "2023-12-20",
+        "quoted": 31896,
+        "ours": 32185.0,
+        "diff_pct": 0.91,
+        "set": "primary"
+      },
+      {
+        "id": "P4",
+        "date": "2024-10-08",
+        "quoted": 47000,
+        "ours": 47831.0,
+        "diff_pct": 1.77,
+        "set": "primary"
+      },
+      {
+        "id": "P5",
+        "date": "2025-12-10",
+        "quoted": 81300,
+        "ours": 81791.0,
+        "diff_pct": 0.6,
+        "set": "primary"
+      },
+      {
+        "id": "P6",
+        "date": "2026-02-18",
+        "quoted": 79000,
+        "ours": 79233.0,
+        "diff_pct": 0.3,
+        "set": "primary"
+      },
+      {
+        "id": "P7",
+        "date": "2026-04-29",
+        "quoted": 78500,
+        "ours": 78411.0,
+        "diff_pct": -0.11,
+        "set": "primary"
+      },
+      {
+        "id": "P8",
+        "date": "2026-09-16",
+        "quoted": 76700,
+        "ours": 77070.0,
+        "diff_pct": 0.48,
+        "set": "primary"
+      },
+      {
+        "id": "C1",
+        "date": "2024-10-08",
+        "quoted": 52500,
+        "ours": 47831.0,
+        "diff_pct": -8.89,
+        "set": "context"
+      },
+      {
+        "id": "C2",
+        "date": "2025-10-30",
+        "quoted": 88000,
+        "ours": 82273.0,
+        "diff_pct": -6.51,
+        "set": "context"
+      }
+    ],
+    "median_abs_diff_pct_primary": 0.71,
+    "gate_5pct": true
+  },
+  "price_notes": [],
+  "oos_window": [
+    "2023-08-24",
+    "2026-09-24"
+  ],
+  "tests": {
+    "M1": {
+      "h": 90,
+      "T": 1038,
+      "zone_days": 192,
+      "episodes": 2,
+      "episode_starts": [
+        "2023-08-24",
+        "2026-01-31"
+      ],
+      "unconditional_mean": 0.07407636611164091,
+      "conditional_mean": 0.14901012072128828,
+      "D": 0.07493375460964737,
+      "p_one_sided": 0.3183408295852074,
+      "inferential": false,
+      "conditional_simple_return": 0.1606847361163597,
+      "unconditional_simple_return": 0.07688904018487586,
+      "label": "AVIV < 1.0 (price below the True Market Mean)",
+      "zone_share_of_oos_days": 0.22340425531914893,
+      "holm": {
+        "p_entered": 1.0,
+        "p_holm": 1.0,
+        "status": "NOT TESTABLE (descriptive only)"
+      }
+    },
+    "M2": {
+      "h": 90,
+      "T": 1038,
+      "zone_days": 278,
+      "episodes": 4,
+      "episode_starts": [
+        "2024-02-14",
+        "2024-11-06",
+        "2025-05-08",
+        "2025-10-02"
+      ],
+      "unconditional_mean": 0.07407636611164091,
+      "conditional_mean": -0.05347378946884992,
+      "D": -0.12755015558049082,
+      "p_one_sided": 0.09145427286356822,
+      "inferential": false,
+      "conditional_simple_return": -0.05206921355239813,
+      "unconditional_simple_return": 0.07688904018487586,
+      "label": "AVIV >= 1.5",
+      "zone_share_of_oos_days": 0.24645390070921985,
+      "holm": {
+        "p_entered": 1.0,
+        "p_holm": 1.0,
+        "status": "NOT TESTABLE (descriptive only)"
+      }
+    },
+    "R1": {
+      "name": "COINTIME-1 R1: True Market Mean regime line, post-publication",
+      "rubric_version": "1.1",
+      "objective": "beat_benchmark",
+      "benchmark": "market",
+      "grade": "F",
+      "score": 0.167,
+      "caps": [],
+      "sr_annual": 0.839,
+      "excess_sr_annual": -0.618,
+      "excess_return_annual": -0.1391,
+      "beats_benchmark": false,
+      "dsr": 0.1363,
+      "n_trials": 1,
+      "pbo": null,
+      "haircut_p": 0.8614,
+      "spa_p": 1.0,
+      "holdout_excess_sr_is": -0.965,
+      "holdout_excess_sr_oos": -0.551,
+      "max_drawdown": 0.4279,
+      "checks": {
+        "dsr": "FAIL",
+        "pbo": "N/A",
+        "haircut": "FAIL",
+        "spa": "FAIL",
+        "holdout": "FAIL",
+        "stability": "FAIL",
+        "costs": "PASS",
+        "surface": "N/A"
+      },
+      "compound_growth_rule": 0.29924156563886184,
+      "compound_growth_hold": 0.4559730770080015,
+      "time_in_market": 0.776595744680851
+    }
+  },
+  "descriptive": {
+    "share_aviv_gt1_to_2023_05_08_metrics_close": 0.6429238673517048,
+    "share_aviv_gt1_before_publication_coinbase": 0.6124450456543794,
+    "share_aviv_gt1_after_publication": 0.776595744680851,
+    "aviv_range_after_publication": [
+      0.7599503595624815,
+      1.8621406106365064
+    ],
+    "aviv_last": 1.0888631976750474,
+    "tmm_last": 77498.67952207473,
+    "cycle_turns_in_window": [
+      {
+        "kind": "top",
+        "date": "2025-10-06",
+        "confirmed": true,
+        "nearest_AVIV=1_days": 117,
+        "nearest_MVRV=1_days": 997,
+        "nearest_close=STH cost basis_days": 4
+      },
+      {
+        "kind": "bottom",
+        "date": "2026-06-30",
+        "provisional": true,
+        "nearest_AVIV=1_days": 45,
+        "nearest_MVRV=1_days": 1264,
+        "nearest_close=STH cost basis_days": 45
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "metrics_sha256": "28c1e42349f110ed30d1d835349d8885849a80bafb4c61e0ff3d0e9ce4fea7df",
+  "rows": [
+    {
+      "id": "P1",
+      "date": "2023-01-01",
+      "quoted": 28659,
+      "ours": 28912.0,
+      "diff_pct": 0.88,
+      "set": "primary"
+    },
+    {
+      "id": "P2",
+      "date": "2023-10-10",
+      "quoted": 29720,
+      "ours": 29964.0,
+      "diff_pct": 0.82,
+      "set": "primary"
+    },
+    {
+      "id": "P3",
+      "date": "2023-12-20",
+      "quoted": 31896,
+      "ours": 32185.0,
+      "diff_pct": 0.91,
+      "set": "primary"
+    },
+    {
+      "id": "P4",
+      "date": "2024-10-08",
+      "quoted": 47000,
+      "ours": 47831.0,
+      "diff_pct": 1.77,
+      "set": "primary"
+    },
+    {
+      "id": "P5",
+      "date": "2025-12-10",
+      "quoted": 81300,
+      "ours": 81791.0,
+      "diff_pct": 0.6,
+      "set": "primary"
+    },
+    {
+      "id": "P6",
+      "date": "2026-02-18",
+      "quoted": 79000,
+      "ours": 79233.0,
+      "diff_pct": 0.3,
+      "set": "primary"
+    },
+    {
+      "id": "P7",
+      "date": "2026-04-29",
+      "quoted": 78500,
+      "ours": 78411.0,
+      "diff_pct": -0.11,
+      "set": "primary"
+    },
+    {
+      "id": "P8",
+      "date": "2026-09-16",
+      "quoted": 76700,
+      "ours": 77070.0,
+      "diff_pct": 0.48,
+      "set": "primary"
+    },
+    {
+      "id": "C1",
+      "date": "2024-10-08",
+      "quoted": 52500,
+      "ours": 47831.0,
+      "diff_pct": -8.89,
+      "set": "context"
+    },
+    {
+      "id": "C2",
+      "date": "2025-10-30",
+      "quoted": 88000,
+      "ours": 82273.0,
+      "diff_pct": -6.51,
+      "set": "context"
+    }
+  ],
+  "median_abs_diff_pct_primary": 0.71,
+  "gate_5pct": true
+}
